@@ -1,18 +1,18 @@
 # Fdb version 4
-["bibtex main"] 1792157224.94597 "main.aux" "main.bbl" "main" 1792157232.89256 0
+["bibtex main"] 1792157224.94597 "main.aux" "main.bbl" "main" 1792157866.02763 0
   "./referencias.bib" 1792157213 6342 2ff8917e291b59c8eb29b6257f63c6e2 ""
   "c:/texlive/2026/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1791940382 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1792157228 11082 0e06763109872c2ebbd3ebdc45a975b5 "xelatex"
+  "main.aux" 1792157861 11082 0e06763109872c2ebbd3ebdc45a975b5 "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1792157230.10501 "main.xdv" "main.pdf" "main" 1792157232.90055 0
-  "main.xdv" 1792157228 425648 bbef70d102d75465c2e58c0a816f3594 "xelatex"
+["xdvipdfmx"] 1792157863.15053 "main.xdv" "main.pdf" "main" 1792157866.0364 0
+  "main.xdv" 1792157861 443520 4a19a31cd0b342fc87ecdc987989a091 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1792157225.73363 "main.tex" "main.xdv" "main" 1792157232.89304 0
+["xelatex"] 1792157858.42012 "main.tex" "main.xdv" "main" 1792157866.0283 0
   "Anexos/01_Anexo.tex" 1788367700 614 5abc7163436d9ce61a9f4fbdafef7cd3 ""
   "Capítulos/01_Introducción.tex" 1792157192 20228 b145e05974d550d9047383670e703de5 ""
   "Capítulos/02_Metodología.tex" 1788367700 3843 dd7edda09c9ca65b9dd4a24f17b00309 ""
@@ -31,7 +31,7 @@
   "Preliminares/05_Dedicatoria.tex" 1788367700 586 13acdd6d12b949d35306f5af4a332030 ""
   "Preliminares/06_Agradecimiento.tex" 1788367700 604 83a60ef58b92c68af24685fcaacecb01 ""
   "Preliminares/07_Índices.tex" 1788374898 302 775983e04f3d667ee48413c7020d8a0b ""
-  "Preliminares/08_Resumen.tex" 1788367700 449 b6df66f4c18ef3fc755152966da43f9b ""
+  "Preliminares/08_Resumen.tex" 1792157857 2249 aed87b9981c4c0c96075fbc0dde15ac9 ""
   "Preliminares/09_Abstract.tex" 1788367700 364 4f76c355f6c9afd9e365e7be11d0035e ""
   "c:/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1791938900 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1791953580 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -109,16 +109,16 @@
   "c:/texlive/2026/texmf-dist/web2c/texmf.cnf" 1791922838 43815 bcd8835056a2dfac260166a1c9541261 ""
   "c:/texlive/2026/texmf-var/web2c/xetex/xelatex.fmt" 1791953987 6015433 566c955d6834546559422f7e87be3d82 ""
   "c:/texlive/2026/texmf.cnf" 1791953703 713 e69b156964470283e0530f5060668171 ""
-  "main.aux" 1792157228 11082 0e06763109872c2ebbd3ebdc45a975b5 "xelatex"
+  "main.aux" 1792157861 11082 0e06763109872c2ebbd3ebdc45a975b5 "xelatex"
   "main.bbl" 1792157225 5130 c386a765e9bc7e15f1a3f2d9e449fce7 "bibtex main"
-  "main.loa" 1792157228 69 7833ebec327772c54b4a3ca278e1cb28 "xelatex"
-  "main.loe" 1792157228 191 40374fa07bebb82139369bb46ec85d69 "xelatex"
-  "main.lof" 1792157228 281 37099f469cef4813022d8870a458c013 "xelatex"
-  "main.loi" 1792157228 409 eb115961c93e6dd10ed0148b8987329f "xelatex"
-  "main.lot" 1792157228 484 ef5cb0bdbe90a0dd092ba8951c36d154 "xelatex"
-  "main.out" 1792157228 8289 60ff41d7c1e12a081835950e8ac28508 "xelatex"
+  "main.loa" 1792157861 69 7833ebec327772c54b4a3ca278e1cb28 "xelatex"
+  "main.loe" 1792157861 191 40374fa07bebb82139369bb46ec85d69 "xelatex"
+  "main.lof" 1792157861 281 37099f469cef4813022d8870a458c013 "xelatex"
+  "main.loi" 1792157861 409 eb115961c93e6dd10ed0148b8987329f "xelatex"
+  "main.lot" 1792157861 484 ef5cb0bdbe90a0dd092ba8951c36d154 "xelatex"
+  "main.out" 1792157861 8289 60ff41d7c1e12a081835950e8ac28508 "xelatex"
   "main.tex" 1792156082 6679 4c9bd0c2e57d701625a2924334a4eb8e ""
-  "main.toc" 1792157228 4093 c4e211cda93129e727cf8c4f87805f2c "xelatex"
+  "main.toc" 1792157861 4093 c4e211cda93129e727cf8c4f87805f2c "xelatex"
   "uti_tfm.sty" 1788374704 24636 712c175d4c23529c323e8d1df62873cc ""
   (generated)
   "main.aux"
