@@ -1,48 +1,49 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {I}Introducción}{17}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Contextualización}{17}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Estado del Arte}{18}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Planteamiento del Problema}{21}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Justificación}{21}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Objetivos}{22}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Objetivo General}{22}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Objetivos Específicos}{23}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.2}Estado del Arte}{19}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Planteamiento del Problema}{20}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Justificación}{22}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Objetivos}{23}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Objetivo General}{23}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Objetivos Específicos}{24}{subsection.1.5.2}%
 \contentsline {section}{\numberline {1.6}Alcance del Proyecto}{24}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Fundamentación Teórica}{24}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Incidente de ciberseguridad y vulneración de datos personales}{24}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}Gestión de incidentes según ISO/IEC 27035}{25}{subsection.1.7.2}%
-\contentsline {subsection}{\numberline {1.7.3}Respuesta a incidentes según NIST SP 800-61 Rev. 3}{25}{subsection.1.7.3}%
-\contentsline {subsection}{\numberline {1.7.4}Marco normativo ecuatoriano}{25}{subsection.1.7.4}%
-\contentsline {subsection}{\numberline {1.7.5}Roles y matriz RACI}{26}{subsection.1.7.5}%
-\contentsline {subsection}{\numberline {1.7.6}Ejercicios de mesa}{26}{subsection.1.7.6}%
-\contentsline {chapter}{\numberline {II}Metodología}{27}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Diagnóstico de la Situación Actual}{27}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Área de Estudio}{27}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Metodología de Desarrollo o Implementación}{28}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Técnicas e Instrumentos de Recolección de Información}{28}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Requerimientos del Proyecto}{28}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Requerimientos Funcionales}{28}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Requerimientos No Funcionales}{28}{subsection.2.5.2}%
-\contentsline {section}{\numberline {2.6}Diseño de la Solución}{28}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Justificación Técnica}{28}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Ejemplo de Imagen 1}{29}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Ejemplo de Ecuación 1}{29}{subsection.2.7.2}%
-\contentsline {chapter}{\numberline {III}Implementación, Pruebas y Resultados}{30}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Descripción de la Solución}{30}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Proceso de Implementación}{30}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Pruebas y Validación}{30}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Resultados}{30}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Ejemplo de Figura 2}{30}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Ejemplo de Tabla 2}{31}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Ejemplo de Imagen 2}{31}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Ejemplo de Ecuación 2}{31}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Ejemplos de Referencias Cruzadas}{32}{subsection.3.4.5}%
-\contentsline {section}{\numberline {3.5}Cronograma y Presupuesto}{32}{section.3.5}%
-\contentsline {chapter}{\numberline {IV}Conclusiones y Recomendaciones}{33}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Conclusiones}{33}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Recomendaciones}{33}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Trabajos Futuros}{33}{section.4.3}%
-\contentsline {chapter}{REFERENCIAS}{34}{section*.7}%
-\contentsline {chapter}{GLOSARIO}{37}{chapter*.9}%
+\contentsline {section}{\numberline {1.7}Fundamentación Teórica}{26}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Incidente de ciberseguridad y vulneración de datos personales}{26}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Gestión de incidentes según ISO/IEC 27035}{26}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Respuesta a incidentes según NIST SP 800-61 Rev. 3}{27}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Equivalencia de fases entre la metodología y los marcos de referencia}{27}{subsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.7.5}Marco normativo ecuatoriano}{29}{subsection.1.7.5}%
+\contentsline {subsection}{\numberline {1.7.6}Roles y matriz RACI}{29}{subsection.1.7.6}%
+\contentsline {subsection}{\numberline {1.7.7}Ejercicios de mesa y juicio de expertos}{30}{subsection.1.7.7}%
+\contentsline {chapter}{\numberline {II}Metodología}{31}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Diagnóstico de la Situación Actual}{31}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Área de Estudio}{31}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Metodología de Desarrollo o Implementación}{32}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Técnicas e Instrumentos de Recolección de Información}{32}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Requerimientos del Proyecto}{32}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Requerimientos Funcionales}{32}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Requerimientos No Funcionales}{32}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Diseño de la Solución}{32}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Justificación Técnica}{32}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Ejemplo de Imagen 1}{33}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Ejemplo de Ecuación 1}{33}{subsection.2.7.2}%
+\contentsline {chapter}{\numberline {III}Implementación, Pruebas y Resultados}{34}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Descripción de la Solución}{34}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Proceso de Implementación}{34}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Pruebas y Validación}{34}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Resultados}{34}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Ejemplo de Figura 2}{34}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Ejemplo de Tabla 2}{35}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Ejemplo de Imagen 2}{35}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Ejemplo de Ecuación 2}{35}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Ejemplos de Referencias Cruzadas}{36}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Cronograma y Presupuesto}{36}{section.3.5}%
+\contentsline {chapter}{\numberline {IV}Conclusiones y Recomendaciones}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conclusiones}{37}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Recomendaciones}{37}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Trabajos Futuros}{37}{section.4.3}%
+\contentsline {chapter}{REFERENCIAS}{38}{section*.9}%
+\contentsline {chapter}{GLOSARIO}{41}{chapter*.11}%
 \renewcommand {\cftchappresnum }{ANEXO~}
-\contentsline {chapter}{\numberline {A}Título del Anexo A}{38}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Título del Anexo A}{42}{appendix.A}%

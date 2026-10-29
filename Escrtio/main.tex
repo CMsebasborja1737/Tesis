@@ -19,6 +19,16 @@
 % Compatibilidad con FirmaEC: evita que hyperref inserte /OpenAction.
 \hypersetup{pdfstartview=}
 \renewcommand{\bibname}{REFERENCIAS} % report/book
+
+% Tablas con columnas alineadas a la izquierda (sin guiones de corte)
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hyphenpenalty=10000}p{#1}}
+% Evita que "ciberseguridad" se corte con guion (p. ej., en la portada)
+\hyphenation{ciberseguridad}
+\setlength{\emergencystretch}{3em} % reparte espacio en vez de desbordar el margen
+% Marca en rojo lo que falta completar o verificar; buscar "\pendiente" antes de entregar
+\usepackage{xcolor}
+\newcommand{\pendiente}[1]{\textcolor{red}{\textit{[#1]}}}
 % (si fuera article sería \renewcommand{\refname}{REFERENCIAS})
 
 \begin{document}
@@ -82,7 +92,7 @@
 un protocolo de gestión y notificación de
 incidentes de ciberseguridad en
 instituciones de educación superior} % Tema / Título
-{Trabajo de Titulación modalidad Trabajo de Integración Curricular} % Texto tipo de trabajo
+{Trabajo de Integración Curricular previo a \UTIFraseTituloPortada} % Título según el género de los autores
 % Un autor:
 {\UTIDatosAutores
   {Teobaldo Sebastian Borja Luque}{Masculino}{1728219435}

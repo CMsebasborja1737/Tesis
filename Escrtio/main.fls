@@ -146,6 +146,16 @@ INPUT c:/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT c:/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT c:/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT c:/texlive/2026/texmf-dist/tex/latex/tools/array.sty
+INPUT c:/texlive/2026/texmf-dist/tex/latex/tools/array.sty
+INPUT c:/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT c:/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT c:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT c:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT c:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT c:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT c:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT c:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT ./main.aux
 INPUT ./main.aux
 INPUT main.aux

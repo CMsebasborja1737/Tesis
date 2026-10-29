@@ -31,6 +31,10 @@
   Oficial, Quinto Suplemento N.° 459, May 2021, publicada el 26 de mayo de
   2021.
 
+\bibitem{coa2017}
+------, ``{Código Orgánico Administrativo},'' Registro Oficial, Segundo
+  Suplemento N.° 31, Jul. 2017, publicado el 7 de julio de 2017.
+
 \bibitem{spdp2026norma}
 {Superintendencia de Protección de Datos Personales}, ``{Norma Técnica de
   Notificaciones de Vulneraciones de la Seguridad de los Datos Personales},''
@@ -79,9 +83,23 @@ J.~Vykopal, P.~{\v{C}}eleda, V.~{\v{S}}v{\'a}bensk{\'y}, M.~Hofbauer, and
   Computer Science Education ({ITiCSE} 2024)}.\hskip 1em plus 0.5em minus
   0.4em\relax ACM, 2024.
 
+\bibitem{metared2025imc}
+\BIBentryALTinterwordspacing
+{MetaRed TIC}, ``Índice de madurez en ciberseguridad ({IMC}) de las
+  instituciones de educación superior: informe {IMC} 2024,'' MetaRed, Banco
+  Santander y Secretaría General Iberoamericana, Madrid, España, Informe,
+  Jun. 2025. [Online]. Available:
+  \url{https://www.metared.org/content/dam/metared/imc/MetaRed_IMC_2024.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{derenzin2024}
+F.~Derenzin-Martinez, ``¿están los institutos universitarios en {Ecuador}
+  preparados para los ciberataques?'' \emph{593 Digital Publisher CEIT},
+  vol.~9, no.~6, pp. 1220--1232, 2024.
+
 \bibitem{iso27035_2023}
-{ISO/IEC}, ``{ISO/IEC} 27035-1:2023 information technology -- information
-  security incident management -- part 1: Principles and process,''
+{ISO/IEC}, ``{ISO/IEC 27035-1:2023 Information Technology---Information
+  Security Incident Management---Part 1: Principles and Process},''
   International Organization for Standardization, Ginebra, Suiza, 2023.
 
 \bibitem{nist80061r3}
@@ -90,11 +108,26 @@ A.~Nelson, S.~Rekhi, M.~Souppaya, and K.~Scarfone, ``Incident response
   2.0 community profile,'' National Institute of Standards and Technology,
   Gaithersburg, MD, USA, NIST Special Publication 800-61 Rev. 3, 2025.
 
+\bibitem{aiken1985}
+L.~R. Aiken, ``Three coefficients for analyzing the reliability and validity of
+  ratings,'' \emph{Educational and Psychological Measurement}, vol.~45, no.~1,
+  pp. 131--142, 1985.
+
+\bibitem{iso27035_2_2023}
+{ISO/IEC}, ``{ISO/IEC 27035-2:2023 Information Technology---Information
+  Security Incident Management---Part 2: Guidelines to Plan and Prepare for
+  Incident Response},'' International Organization for Standardization,
+  Ginebra, Suiza, 2023.
+
 \bibitem{iso27001_2022}
-{ISO/IEC}, ``{ISO/IEC} 27001:2022 information security, cybersecurity and
-  privacy protection -- information security management systems --
-  requirements,'' International Organization for Standardization, Ginebra,
-  Suiza, 2022.
+------, ``{ISO/IEC 27001:2022 Information Security, Cybersecurity and Privacy
+  Protection---Information Security Management Systems---Requirements},''
+  International Organization for Standardization, Ginebra, Suiza, 2022.
+
+\bibitem{nistcsf2024}
+{National Institute of Standards and Technology}, ``The {NIST} cybersecurity
+  framework ({CSF}) 2.0,'' National Institute of Standards and Technology,
+  Gaithersburg, MD, USA, NIST Cybersecurity White Paper CSWP 29, 2024.
 
 \bibitem{nist80084}
 T.~Grance, T.~Nolan, K.~Burke, R.~Dudley, G.~White, and T.~Good, ``Guide to
