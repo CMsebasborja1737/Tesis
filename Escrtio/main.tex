@@ -30,6 +30,9 @@
 \usepackage{xcolor}
 \newcommand{\pendiente}[1]{\textcolor{red}{\textit{[#1]}}}
 % (si fuera article sería \renewcommand{\refname}{REFERENCIAS})
+% Diagramas (flujo del protocolo en el Capítulo II)
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
 
 \begin{document}
 
@@ -83,7 +86,7 @@
 %
 % Mantenga {0}{0} mientras la selección esté pendiente.
 % Ejemplo: \UTISeleccionInvestigacion{3}{2}
-\UTISeleccionInvestigacion{0}{0}
+\UTISeleccionInvestigacion{1}{2}
 \UTIPortada
 {LOGO-UTI-1.png} % Logo (ruta)
 {FACULTAD DE INGENIERÍAS} % Facultad

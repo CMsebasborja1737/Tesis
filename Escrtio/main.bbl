@@ -41,6 +41,11 @@
   Resolución N.° SPDP-SPD-2026-0040-R, Registro Oficial, Primer Suplemento
   N.° 376, Sep. 2026, publicada el 24 de septiembre de 2026.
 
+\bibitem{loes2010}
+{Asamblea Nacional del Ecuador}, ``{Ley Orgánica de Educación Superior},''
+  Registro Oficial, Segundo Suplemento N.° 298, Oct. 2010, publicada el 12 de
+  octubre de 2010, con sus reformas.
+
 \bibitem{villegas2021csirt}
 W.~Villegas-Ch, I.~Ortiz-Garc{\'e}s, and S.~S{\'a}nchez-Viteri, ``Proposal for
   an implementation guide for a computer security incident response team on a
@@ -139,8 +144,10 @@ T.~Grance, T.~Nolan, K.~Burke, R.~Dudley, G.~White, and T.~Good, ``Guide to
 A.~R. Hevner, S.~T. March, J.~Park, and S.~Ram, ``Design science in information
   systems research,'' \emph{MIS Quarterly}, vol.~28, no.~1, pp. 75--105, 2004.
 
-\bibitem{humble2011devops}
-J.~Humble and D.~Farley, ``Continuous delivery and devops: A practical
-  approach,'' in \emph{Agile Conference}, 2011.
+\bibitem{peffers2007dsrm}
+K.~Peffers, T.~Tuunanen, M.~A. Rothenberger, and S.~Chatterjee, ``A design
+  science research methodology for information systems research,''
+  \emph{Journal of Management Information Systems}, vol.~24, no.~3, pp. 45--77,
+  2007.
 
 \end{thebibliography}

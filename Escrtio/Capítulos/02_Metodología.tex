@@ -2,18 +2,85 @@
 \label{chap:metodologia}
 
 \section{Diagnóstico de la Situación Actual}
-\textit{[Analizar el estado inicial del sistema, proceso o infraestructura antes de la implementación del proyecto. Describir cómo funciona actualmente y las principales limitaciones técnicas.]}
+\label{sec:diagnostico}
+El diagnóstico establece la línea base de la gestión de incidentes en las IES ecuatorianas y de las obligaciones que deben cumplir, en respuesta al primer objetivo específico. Como el estudio no se circunscribe a una institución ni recoge datos internos, el diagnóstico es documental y se apoya en tres fuentes, descritas en la Sección~\ref{sec:tecnicas}: (a) el análisis de la normativa vigente; (b) los estudios e informes previos sobre ciberseguridad en IES; y (c) la revisión de la información que publica una muestra intencional de universidades e institutos superiores. Los hallazgos de las tres fuentes se organizan según las fases del protocolo, de modo que cada brecha identificada se convierta en un insumo para el diseño.
+
+\subsection{Requisitos normativos}
+El análisis de la LOFC, la LOPDP, la norma técnica de la SPDP y el Código Orgánico Administrativo permite identificar las obligaciones de notificación que el protocolo debe atender, sintetizadas en la Tabla~\ref{tab:requisitos_normativos}. Las obligaciones de la LOPDP alcanzan a todas las IES, públicas y particulares, en su calidad de responsables del tratamiento de datos personales; las de la LOFC, solo a las que operen servicios esenciales o infraestructura crítica digital incluidos en el Catálogo Nacional, o presten servicios digitales a terceros \cite{lofc2026,lopdp2021}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Obligaciones de notificación aplicables a las IES.}
+  \label{tab:requisitos_normativos}
+  \small
+  \begin{tabular}{|L{\dimexpr0.30\linewidth-2\tabcolsep}|L{\dimexpr0.20\linewidth-2\tabcolsep}|L{\dimexpr0.26\linewidth-2\tabcolsep}|L{\dimexpr0.23\linewidth-2\tabcolsep}|}
+    \hline
+    \textbf{Obligación} & \textbf{Norma} & \textbf{Destinatario} & \textbf{Plazo} \\
+    \hline
+    Notificar los incidentes relevantes & LOFC \pendiente{artículo} & Órgano de control del sector o ente rector & 72 horas desde la detección \\
+    \hline
+    Designar un punto de contacto técnico permanente & LOFC \pendiente{artículo} & Ente rector y CSIRT Nacional & Permanente \\
+    \hline
+    Notificar la vulneración de la seguridad de los datos personales & LOPDP, art.~43, reformado por la LOFC & SPDP mediante el SISPDP, ARCOTEL y CSIRT & Término de cinco días desde que se tuvo constancia \\
+    \hline
+    Comunicar la vulneración al responsable & LOPDP, art.~44 & Responsable del tratamiento (lo cumple el encargado) & Término de dos días \\
+    \hline
+    Notificar a los titulares cuando exista riesgo para sus derechos & LOPDP, art.~46 & Titulares afectados & Término de tres días \\
+    \hline
+    Conservar la constancia de recepción de la notificación & Norma técnica SPDP & Registro interno de la IES & Al notificar \\
+    \hline
+  \end{tabular}
+  \par\normalsize\raggedright
+  \noindent{\footnotesize Los términos se computan en días hábiles \cite{coa2017}.\par}
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia a partir de \cite{lofc2026,lopdp2021,spdp2026norma}}
+\end{table}
+
+\subsection{Estudios previos}
+Los estudios disponibles describen el estado de la ciberseguridad en las IES de forma agregada. El índice de madurez de MetaRed ubica a Ecuador entre los países con mayores carencias de la región, con 0,99 sobre 3, y reporta que casi el 70~\% de las universidades participantes no dispone de procedimientos formales aprobados para gestionar incidentes de \textit{ransomware} \cite{metared2025imc}. Derenzin-Martinez \cite{derenzin2024} advierte, además, que no existen datos específicos sobre el impacto de los ciberataques en las universidades ecuatorianas. Ningún estudio identificado se ocupa de los institutos superiores técnicos y tecnológicos, lo que confirma la necesidad de una propuesta que incluya a ambos tipos de institución. \pendiente{Ampliar con los estudios adicionales que se identifiquen durante el diagnóstico.}
+
+\subsection{Información pública de las IES}
+\pendiente{Completar con los resultados de la revisión de la información pública de la muestra: porcentaje de IES que presenta cada indicador, comparación entre universidades e institutos superiores y principales brechas.}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Indicadores de información pública sobre seguridad y protección de datos en la muestra de IES.}
+  \label{tab:resultados_diagnostico}
+  \small
+  \begin{tabular}{|L{\dimexpr0.49\linewidth-2\tabcolsep}|L{\dimexpr0.17\linewidth-2\tabcolsep}|L{\dimexpr0.17\linewidth-2\tabcolsep}|L{\dimexpr0.16\linewidth-2\tabcolsep}|}
+    \hline
+    \textbf{Indicador} & \textbf{Univ. (\%)} & \textbf{Inst. (\%)} & \textbf{Total (\%)} \\
+    \hline
+    P1. Política o aviso de privacidad publicado & & & \\
+    \hline
+    P2. Delegado de protección de datos o contacto para el ejercicio de derechos & & & \\
+    \hline
+    P3. Política de seguridad de la información publicada & & & \\
+    \hline
+    P4. Canal visible para reportar incidentes de seguridad & & & \\
+    \hline
+    P5. Equipo de respuesta o unidad de seguridad identificada & & & \\
+    \hline
+    P6. Normativa interna sobre gestión de incidentes publicada & & & \\
+    \hline
+  \end{tabular}
+  \par\normalsize\raggedright
+  \noindent{\footnotesize Univ.: universidades y escuelas politécnicas ($M = 5$); Inst.: institutos superiores ($M = 5$). Porcentajes calculados con la Ecuación~\ref{eq:indicador_publico}.\par}
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Revisión de los sitios web oficiales de las IES de la muestra \pendiente{fechas de consulta}}
+\end{table}
 
 \section{Área de Estudio}
+La Tabla~\ref{tab:area_estudio} delimita el área de estudio del proyecto.
 
 \begin{table}[htbp]
   \centering
   \caption{Área de estudio.}
   \label{tab:area_estudio}
   \renewcommand{\arraystretch}{1.35}
-  \begin{tabular}{|p{0.39\textwidth}|p{0.53\textwidth}|}
+  \begin{tabular}{|p{0.39\textwidth}|L{0.53\textwidth}|}
     \hline
-    \textbf{Dominio:} & \textit{[Indique el dominio académico o científico del proyecto.]} \\
+    \textbf{Dominio:} & Seguridad de la información y ciberseguridad \pendiente{confirmar con la tutora el dominio institucional} \\
     \hline
     \textbf{Línea de investigación:} & \UTILineaInvestigacion \\
     \hline
@@ -21,55 +88,317 @@
     \hline
     \textbf{Campo:} & Tecnologías de la información y la comunicación (TIC) \\
     \hline
-    \textbf{Área:} & \textit{[Defina el área técnica específica del proyecto.]} \\
+    \textbf{Área:} & Gestión de incidentes de ciberseguridad y protección de datos personales \\
     \hline
-    \textbf{Aspectos:} & \textit{[Describa los procesos, tecnologías o problemas que serán analizados.]} \\
+    \textbf{Aspectos:} & Detección, clasificación, respuesta y notificación de incidentes; roles y escalamiento; cumplimiento de los plazos de la LOFC y la LOPDP \\
     \hline
-    \textbf{Objeto de estudio:} & \textit{[Indique la organización, sistema, proceso o infraestructura objeto del estudio.]} \\
+    \textbf{Objeto de estudio:} & Gestión y notificación de incidentes de ciberseguridad en las IES del Ecuador: universidades, escuelas politécnicas e institutos superiores, públicos y particulares \\
     \hline
-    \textbf{Periodo de estudio:} & \textit{[Indique las fechas o el intervalo de tiempo que comprende el estudio.]} \\
+    \textbf{Periodo de estudio:} & Período académico B26: quince semanas, del 19 de octubre de 2026 al 29 de enero de 2027 \\
     \hline
   \end{tabular}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia}
 \end{table}
 
 \section{Metodología de Desarrollo o Implementación}
-\textit{[Describir y justificar la metodología empleada según la naturaleza del proyecto, indicando las fases y actividades a ejecutar. Por ejemplo, metodologías ágiles o tradicionales para software, o modelos de diseño, implementación o despliegue para hardware o infraestructura.]}
+\label{sec:metodologia_dsr}
+El proyecto es una investigación aplicada con enfoque mixto: combina datos cualitativos, obtenidos del análisis documental y de los comentarios de los expertos, con datos cuantitativos, como los porcentajes de los indicadores de información pública y el coeficiente de validez del juicio de expertos.
+
+Dado que el resultado principal es un artefacto, una metodología y el protocolo de referencia que de ella se deriva, se adopta la investigación en ciencia del diseño (\textit{Design Science Research}, DSR). Este paradigma busca crear y evaluar artefactos que resuelvan problemas organizacionales relevantes, y exige que el diseño se fundamente en el conocimiento existente y que su utilidad se demuestre de forma rigurosa \cite{hevner2004design}. En particular, se sigue el proceso de seis actividades propuesto por Peffers \textit{et al.} \cite{peffers2007dsrm}, cuya correspondencia con las actividades, los objetivos específicos y el cronograma del proyecto se presenta en la Tabla~\ref{tab:fases_dsr}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Fases de la metodología DSR aplicadas al proyecto.}
+  \label{tab:fases_dsr}
+  \small
+  \begin{tabular}{|L{\dimexpr0.24\linewidth-2\tabcolsep}|L{\dimexpr0.41\linewidth-2\tabcolsep}|L{\dimexpr0.16\linewidth-2\tabcolsep}|L{\dimexpr0.18\linewidth-2\tabcolsep}|}
+    \hline
+    \textbf{Actividad DSR} & \textbf{Actividades del proyecto} & \textbf{Objetivo} & \textbf{Período} \\
+    \hline
+    1. Identificación del problema y motivación & Análisis normativo, revisión de estudios previos y de la información pública de 10 IES; línea base de brechas. & OE1 & Semanas 3 a 6 \\
+    \hline
+    2. Definición de los objetivos de la solución & Requerimientos funcionales y no funcionales del protocolo a partir de las brechas, los estándares y la normativa. & OE1, OE2 & Semana 6 \\
+    \hline
+    3. Diseño y desarrollo & Diseño de las siete fases, la matriz de severidad, la matriz RACI de referencia y las cuatro plantillas. & OE2, OE3 & Semanas 5 a 8 \\
+    \hline
+    4. Demostración & Caso ilustrativo: aplicación del protocolo a una vulneración de datos personales en una IES ficticia. & OE4 & Semana 9 \\
+    \hline
+    5. Evaluación & Juicio de expertos (V de Aiken) y ajustes al protocolo. & OE4 & Semanas 9 a 12 \\
+    \hline
+    6. Comunicación & Resultados, conclusiones y recomendaciones de adopción; documento final. & -- & Semanas 12 a 15 \\
+    \hline
+  \end{tabular}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia a partir de \cite{peffers2007dsrm}}
+\end{table}
+
+El proceso es iterativo: los resultados de la evaluación pueden devolver el trabajo a la actividad de diseño. En este proyecto, los ítems que no alcancen la meta en el juicio de expertos se ajustan y se consultan de nuevo, y la versión resultante es la que se presenta como protocolo final. Como la disponibilidad del panel es el punto crítico del cronograma, y su evaluación coincide con el feriado de fin de año, los expertos se contactarán con anticipación y recibirán el instrumento al inicio de la novena semana, con plazo de respuesta hasta la duodécima.
 
 \section{Técnicas e Instrumentos de Recolección de Información}
-\textit{[Describir las técnicas utilizadas para obtener información durante el diagnóstico y la validación del proyecto, tales como entrevistas, encuestas u observación directa.]}
+\label{sec:tecnicas}
+La Tabla~\ref{tab:tecnicas} resume las técnicas, los instrumentos, las fuentes y el momento de aplicación de cada una. Ninguna de ellas requiere acceso a los sistemas ni a la información interna de una institución.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Técnicas e instrumentos de recolección de información.}
+  \label{tab:tecnicas}
+  \footnotesize
+  \begin{tabular}{|L{\dimexpr0.25\linewidth-2\tabcolsep}|L{\dimexpr0.24\linewidth-2\tabcolsep}|L{\dimexpr0.29\linewidth-2\tabcolsep}|L{\dimexpr0.21\linewidth-2\tabcolsep}|}
+    \hline
+    \textbf{Técnica} & \textbf{Instrumento} & \textbf{Fuentes o informantes} & \textbf{Momento} \\
+    \hline
+    Análisis documental normativo & Matriz de requisitos normativos & LOFC, LOPDP, norma técnica de la SPDP, Código Orgánico Administrativo y LOES & Semanas 3 a 6 \\
+    \hline
+    Análisis de estudios previos & Ficha bibliográfica & Informes y estudios sobre ciberseguridad en IES & Semanas 3 a 6 \\
+    \hline
+    Revisión de información pública & Lista de verificación de indicadores públicos & Sitios web oficiales y documentos publicados por 10 IES & Semanas 3 a 6 \\
+    \hline
+    Juicio de expertos & Instrumento de validación con escala de 1 a 4, caso ilustrativo y preguntas abiertas & Al menos cinco especialistas & Semanas 9 a 12 \\
+    \hline
+  \end{tabular}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia}
+\end{table}
+
+\subsection{Análisis documental normativo}
+Cada disposición legal relacionada con la gestión y notificación de incidentes se registra en una matriz con seis campos: obligación, norma y artículo, sujeto obligado, destinatario, plazo y canal. La matriz resultante (Tabla~\ref{tab:requisitos_normativos}) alimenta directamente los requerimientos funcionales del protocolo.
+
+\subsection{Revisión de información pública}
+Se revisarán los sitios web oficiales y los documentos publicados por una muestra intencional de diez IES: cinco universidades o escuelas politécnicas y cinco institutos superiores, con representación de instituciones públicas y particulares y de distintas regiones del país. La muestra no pretende ser representativa en sentido estadístico, sino ilustrar la situación de ambos tipos de institución. En cada IES se verifica la presencia de los seis indicadores de la Tabla~\ref{tab:resultados_diagnostico}, y el porcentaje de IES que presenta cada indicador $j$ se calcula con la Ecuación~\ref{eq:indicador_publico}.
+
+\begin{equation}
+\label{eq:indicador_publico}
+P_j\,(\%) = \frac{m_j}{M} \times 100
+\end{equation}
+\addeqtolist{Porcentaje de IES que presenta un indicador público}
+
+Donde $m_j$ es el número de IES en las que se verifica el indicador $j$ y $M$ el número de IES revisadas en el grupo correspondiente. La técnica tiene una limitación que se declara expresamente: que una IES no publique un documento no significa que carezca de él; por ello, los resultados se interpretan como indicios de la visibilidad de la gestión de incidentes, y no como una medición de su madurez.
+
+\subsection{Juicio de expertos}
+El panel estará integrado por al menos cinco especialistas que cumplan dos criterios: título profesional en tecnologías de la información, sistemas, derecho o áreas afines, y al menos cinco años de experiencia en ciberseguridad, gestión de TI o protección de datos personales. Para cubrir los distintos ángulos del protocolo, el panel incluirá al menos un especialista en respuesta a incidentes, uno en protección de datos o derecho, uno con experiencia en la gestión de TI de una universidad y uno con experiencia en la de un instituto superior.
+
+El instrumento de validación tiene tres partes. La primera presenta cada componente del protocolo (fases, matriz de severidad, matriz RACI y plantillas) para que los expertos lo califiquen en cuatro criterios: pertinencia, claridad, suficiencia y coherencia normativa, con una escala de 1 (no cumple) a 4 (cumple totalmente). La segunda presenta el caso ilustrativo, en el que se aplica el protocolo a la exposición de datos personales de estudiantes de una IES ficticia, y pide calificar si el protocolo permite cumplir cada plazo de notificación. La tercera recoge comentarios abiertos. El instrumento se aplicará en línea, en una sola ronda. La validez de contenido de cada ítem se estima con el coeficiente V de Aiken \cite{aiken1985}, según la Ecuación~\ref{eq:aiken}.
+
+\begin{equation}
+\label{eq:aiken}
+V = \frac{S}{n\,(c-1)}
+\end{equation}
+\addeqtolist{Coeficiente V de Aiken}
+
+Donde $S$ es la suma de las diferencias entre la calificación de cada experto y el valor mínimo de la escala, $n$ es el número de expertos y $c$ el número de categorías de la escala, en este caso cuatro. Los ítems con $V < 0{,}80$ se ajustarán según los comentarios recibidos y se enviarán de nuevo a los expertos en una consulta breve.
+
+\subsection{Consideraciones éticas}
+La participación de los expertos será voluntaria y contará con consentimiento informado; sus nombres solo se publicarán con su autorización. Aunque la información revisada de las IES es pública, los resultados se presentarán con códigos (U01 a U05 para las universidades e I01 a I05 para los institutos), para no exponer a ninguna institución. El caso ilustrativo utiliza únicamente una institución y datos ficticios.
 
 \section{Requerimientos del Proyecto}
+Los requerimientos se derivan de los estándares de referencia, de la normativa ecuatoriana y de los hallazgos de la literatura; se complementarán con las brechas que identifique el diagnóstico.
+
 \subsection{Requerimientos Funcionales}
-\textit{[Enumerar y describir los requerimientos funcionales que la solución debe cumplir.]}
+La Tabla~\ref{tab:requerimientos_funcionales} presenta las funciones que el protocolo debe cumplir.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Requerimientos funcionales del protocolo.}
+  \label{tab:requerimientos_funcionales}
+  \small
+  \begin{tabular}{|L{\dimexpr0.10\linewidth-2\tabcolsep}|L{\dimexpr0.61\linewidth-2\tabcolsep}|L{\dimexpr0.28\linewidth-2\tabcolsep}|}
+    \hline
+    \textbf{ID} & \textbf{Requerimiento} & \textbf{Fuente} \\
+    \hline
+    RF01 & Definir canales formales de reporte de eventos, disponibles para el personal, los estudiantes y terceros, incluso fuera del horario laboral. & ISO/IEC 27035 \cite{iso27035_2023}; Ojala \textit{et al.} \cite{ojala2025cybersecurity} \\
+    \hline
+    RF02 & Registrar cada evento con identificador, fecha y hora de detección, reportante y sistemas afectados, como base para el cómputo de plazos. & LOFC \cite{lofc2026} \\
+    \hline
+    RF03 & Clasificar cada incidente por tipo y nivel de severidad, y determinar si es un incidente relevante según la LOFC, una vulneración de datos personales según la LOPDP o ambos. & ISO/IEC 27035; LOFC; LOPDP \\
+    \hline
+    RF04 & Caracterizar las vulneraciones de datos personales según afecten la confidencialidad, la integridad o la disponibilidad, y según su carácter temporal, permanente o irreversible. & Norma técnica SPDP \cite{spdp2026norma} \\
+    \hline
+    RF05 & Escalar el incidente a los responsables definidos dentro de tiempos máximos por nivel de severidad. & NIST SP 800-61 \cite{nist80061r3} \\
+    \hline
+    RF06 & Ejecutar actividades de contención, erradicación y recuperación, con preservación de evidencias. & ISO/IEC 27035; NIST SP 800-61 \\
+    \hline
+    RF07 & Notificar los incidentes relevantes al órgano de control o al ente rector dentro de las 72 horas desde la detección, cuando la LOFC sea aplicable. & LOFC \\
+    \hline
+    RF08 & Notificar las vulneraciones de datos personales a la SPDP mediante el SISPDP, a la ARCOTEL y al CSIRT en el término de cinco días, y exigir a los encargados que comuniquen al responsable en el término de dos días. & LOPDP, arts.~43 y 44 \cite{lopdp2021}; norma técnica SPDP \\
+    \hline
+    RF09 & Comunicar la vulneración a los titulares afectados en el término de tres días cuando exista riesgo para sus derechos, por los canales habituales de la institución. & LOPDP, art.~46; norma técnica SPDP \\
+    \hline
+    RF10 & Cerrar cada incidente dejando constancia en la bitácora, y conservar la constancia de recepción del SISPDP y las evidencias. & Norma técnica SPDP \\
+    \hline
+    RF11 & Realizar una revisión posterior a cada incidente y actualizar el protocolo con las lecciones aprendidas. & ISO/IEC 27035; NIST SP 800-61 \\
+    \hline
+    RF12 & Designar un punto de contacto técnico permanente para la coordinación con el ente rector y el CSIRT Nacional. & LOFC \\
+    \hline
+  \end{tabular}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia}
+\end{table}
+
 \subsection{Requerimientos No Funcionales}
-\textit{[Describir requerimientos relacionados con seguridad, rendimiento, disponibilidad, escalabilidad u otros aplicables.]}
+La Tabla~\ref{tab:requerimientos_no_funcionales} presenta las cualidades que el protocolo debe tener.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Requerimientos no funcionales del protocolo.}
+  \label{tab:requerimientos_no_funcionales}
+  \small
+  \begin{tabular}{|L{\dimexpr0.12\linewidth-2\tabcolsep}|L{\dimexpr0.28\linewidth-2\tabcolsep}|L{\dimexpr0.59\linewidth-2\tabcolsep}|}
+    \hline
+    \textbf{ID} & \textbf{Atributo} & \textbf{Descripción} \\
+    \hline
+    RNF01 & Trazabilidad & Cada actividad deja un registro con fecha, hora y responsable, que permite reconstruir el incidente y demostrar el cumplimiento de los plazos. \\
+    \hline
+    RNF02 & Confidencialidad & El acceso a los registros de incidentes se limita a quienes lo necesitan para su función, y los registros contienen solo los datos personales imprescindibles. \\
+    \hline
+    RNF03 & Disponibilidad & El canal de reporte y el punto de contacto funcionan las 24 horas, incluidos fines de semana y feriados. \\
+    \hline
+    RNF04 & Usabilidad & Las instrucciones se diferencian por rol, usan lenguaje claro y se presentan en fichas breves de consulta rápida. \\
+    \hline
+    RNF05 & Adaptabilidad & El protocolo se ajusta a IES de distinto tipo y tamaño: sus plantillas son parametrizables y, en las instituciones pequeñas, una misma persona puede asumir varios roles. \\
+    \hline
+    RNF06 & Mantenibilidad & El protocolo se revisa al menos una vez al año, después de cada incidente mayor y cuando cambie la normativa, por ejemplo al expedirse el reglamento de la LOFC. \\
+    \hline
+    RNF07 & Bajo costo & El protocolo funciona con las herramientas que cada IES ya posee, sin adquirir nueva infraestructura. \\
+    \hline
+    RNF08 & Cumplimiento verificable & Cada fase y plantilla indica el estándar o la disposición legal a la que responde. \\
+    \hline
+  \end{tabular}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia}
+\end{table}
 
 \section{Diseño de la Solución}
 \label{sec:diseno_solucion}
-\textit{[Describir el diseño técnico de la solución propuesta. Puede incluir arquitectura del sistema o infraestructura, diagramas lógicos y físicos, modelos de datos, componentes o configuraciones técnicas.]}
+La solución es un protocolo de referencia de gestión y notificación de incidentes, que cada IES puede adoptar y ajustar a su estructura. Se compone de cuatro elementos: (a) el flujo de siete fases; (b) la matriz de severidad y escalamiento; (c) la matriz RACI de referencia; y (d) las plantillas de registro y notificación. Esta sección presenta el diseño preliminar de cada elemento, que se ajustará con los resultados del diagnóstico documental y del juicio de expertos.
+
+\subsection{Flujo del protocolo}
+La Figura~\ref{fig:flujo_protocolo} muestra las siete fases del protocolo, cuya equivalencia con ISO/IEC 27035, NIST SP 800-61 Rev.~3 y la normativa nacional se detalla en la Tabla~\ref{tab:equivalencia_fases}. La fase de detección marca el inicio del cómputo de los plazos legales, y la fase de clasificación determina qué notificaciones se activan.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      font=\small,
+      fase/.style={draw, thick, rounded corners=2pt, fill=black!6, text width=3.6cm, minimum height=0.95cm, align=center},
+      nota/.style={draw, densely dashed, align=left, text width=6.6cm, font=\footnotesize, inner sep=4pt, execute at begin node={\hyphenpenalty=10000}},
+      flecha/.style={-{Stealth[length=2.5mm]}, thick}
+    ]
+    % Las notas se apilan primero; cada fase se alinea a la izquierda de su nota.
+    \node[nota] (n1) {Política, roles y matriz RACI, punto de contacto permanente, plantillas, capacitación y ejercicios de mesa.};
+    \node[nota, below=0.45cm of n1] (n2) {Registro de fecha y hora de detección: inicia el cómputo de los plazos legales.};
+    \node[nota, below=0.45cm of n2] (n3) {¿Incidente relevante (LOFC)? ¿Vulneración de datos personales (LOPDP)? Nivel de severidad y escalamiento.};
+    \node[nota, below=0.45cm of n3] (n4) {Contención, erradicación y recuperación, con preservación de evidencias.};
+    \node[nota, below=0.45cm of n4, fill=black!3] (n5) {\textbf{Órgano de control o ente rector:} hasta 72 horas desde la detección (LOFC).\\[2pt]
+      \textbf{SPDP vía SISPDP, ARCOTEL y CSIRT:} término de cinco días (art.~43 LOPDP).\\[2pt]
+      \textbf{Titulares, si hay riesgo:} término de tres días (art.~46 LOPDP).};
+    \node[nota, below=0.45cm of n5] (n6) {Informe de cierre; constancia de recepción del SISPDP y evidencias.};
+    \node[nota, below=0.45cm of n6] (n7) {Revisión posterior al incidente y actualización del protocolo.};
+
+    \node[fase, left=0.6cm of n1] (f1) {1. Preparación};
+    \node[fase, left=0.6cm of n2] (f2) {2. Detección y reporte};
+    \node[fase, left=0.6cm of n3] (f3) {3. Clasificación};
+    \node[fase, left=0.6cm of n4] (f4) {4. Respuesta};
+    \node[fase, left=0.6cm of n5] (f5) {5. Notificación};
+    \node[fase, left=0.6cm of n6] (f6) {6. Cierre};
+    \node[fase, left=0.6cm of n7] (f7) {7. Lecciones aprendidas};
+
+    \foreach \a/\b in {f1/f2, f2/f3, f3/f4, f4/f5, f5/f6, f6/f7}
+      \draw[flecha] (\a) -- (\b);
+    \foreach \i in {1,...,7}
+      \draw[densely dotted] (f\i) -- (n\i);
+
+    \draw[flecha, densely dashed] (f7.west) -- ++(-0.6,0) |- (f1.west)
+      node[pos=0.25, above, rotate=90, font=\footnotesize] {Mejora continua};
+  \end{tikzpicture}
+  \caption{Flujo del protocolo de gestión y notificación de incidentes.}
+  \label{fig:flujo_protocolo}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia a partir de \cite{iso27035_2023,nist80061r3,lofc2026,lopdp2021}}
+\end{figure}
+
+\subsection{Matriz de severidad y escalamiento}
+La clasificación asigna a cada incidente un nivel de severidad según su impacto sobre los servicios y los datos, y cada nivel fija un tiempo máximo de escalamiento al coordinador del equipo de respuesta y a las autoridades. La Tabla~\ref{tab:severidad} presenta la propuesta de referencia, que cada IES calibrará según los servicios que considere críticos.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Niveles de severidad y tiempos de escalamiento de referencia.}
+  \label{tab:severidad}
+  \small
+  \begin{tabular}{|L{\dimexpr0.14\linewidth-2\tabcolsep}|L{\dimexpr0.55\linewidth-2\tabcolsep}|L{\dimexpr0.30\linewidth-2\tabcolsep}|}
+    \hline
+    \textbf{Nivel} & \textbf{Criterios} & \textbf{Escalamiento máximo} \\
+    \hline
+    Crítico & Interrupción de un servicio académico o administrativo crítico, o exposición confirmada de datos sensibles o de un volumen alto de titulares. & 30 minutos al coordinador; inmediato a las autoridades \\
+    \hline
+    Alto & Degradación de un servicio crítico, compromiso de cuentas privilegiadas o sospecha fundada de exposición de datos personales. & 60 minutos al coordinador; 4 horas a las autoridades \\
+    \hline
+    Medio & Afectación de un servicio no crítico o de un número reducido de usuarios, sin indicios de exposición de datos. & 4 horas al coordinador \\
+    \hline
+    Bajo & Evento contenido sin impacto en servicios ni datos, por ejemplo un intento de \textit{phishing} reportado y bloqueado. & Un día hábil, mediante registro \\
+    \hline
+  \end{tabular}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia}
+\end{table}
+
+\subsection{Matriz RACI de referencia}
+La Tabla~\ref{tab:raci} asigna las actividades principales del protocolo a roles genéricos, que cada IES hará corresponder con sus cargos. Esta versión se completará hasta la octava semana del proyecto, conforme al tercer objetivo específico, y se someterá al juicio de expertos. La IES, como responsable del tratamiento, es la obligada a notificar a la SPDP; por ello, la autoridad institucional rinde cuentas de esa actividad y el delegado de protección de datos la ejecuta.
+
+Los roles están pensados para que la matriz funcione tanto en una universidad grande como en un instituto superior con un equipo de TI reducido. En una institución pequeña, el coordinador de incidentes y el equipo técnico pueden ser la misma persona, y la asesoría jurídica o el delegado de protección de datos pueden ser compartidos o externos; lo que no puede faltar es una persona identificada que ejecute cada notificación y una autoridad que rinda cuentas de ella.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Matriz RACI de referencia del protocolo.}
+  \label{tab:raci}
+  \small
+  \begin{tabular}{|L{\dimexpr0.34\linewidth-2\tabcolsep}|c|c|c|c|c|c|}
+    \hline
+    \textbf{Actividad} & \textbf{AUT} & \textbf{COO} & \textbf{TEC} & \textbf{DPD} & \textbf{JUR} & \textbf{COM} \\
+    \hline
+    Registrar el evento y hacer el triaje inicial & I & A & R & -- & -- & -- \\
+    \hline
+    Clasificar la severidad y escalar & I & A/R & C & C & -- & -- \\
+    \hline
+    Determinar si hay vulneración de datos personales & I & C & C & A/R & C & -- \\
+    \hline
+    Contener, erradicar y recuperar & I & A & R & I & -- & -- \\
+    \hline
+    Notificar al órgano de control o ente rector (72 h) & A & R & C & I & C & I \\
+    \hline
+    Notificar a la SPDP, la ARCOTEL y el CSIRT (5 días) & A & C & C & R & C & I \\
+    \hline
+    Comunicar a los titulares (3 días) & A & I & -- & C & C & R \\
+    \hline
+    Cerrar el incidente y conservar evidencias & I & A/R & R & C & -- & -- \\
+    \hline
+    Revisar lecciones aprendidas y actualizar el protocolo & I & A/R & C & C & C & C \\
+    \hline
+  \end{tabular}
+  \par\normalsize\raggedright
+  \noindent{\footnotesize AUT: autoridad institucional; COO: coordinador de incidentes; TEC: equipo técnico de TI; DPD: delegado de protección de datos; JUR: asesoría jurídica; COM: comunicación institucional. R: ejecuta; A: rinde cuentas; C: es consultado; I: es informado.\par}
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia}
+\end{table}
+
+\subsection{Plantillas}
+El protocolo incluye cuatro plantillas, que concentran los registros indispensables para demostrar el cumplimiento de los plazos: (1) reporte y bitácora del incidente, que registra desde la detección hasta el cierre y las lecciones aprendidas; (2) ficha de clasificación, que determina la severidad y si el evento es un incidente relevante, una vulneración de datos personales o ambos; (3) notificación externa, con una sección para el órgano de control o ente rector, otra para el CSIRT y otra para la SPDP, esta última con los campos que exige la norma técnica \cite{spdp2026norma} \pendiente{verificar los campos obligatorios en la Resolución SPDP-SPD-2026-0040-R}; y (4) comunicación a los titulares, que describe la vulneración, su fecha de detección, las medidas adoptadas y recomendaciones de protección.
 
 \section{Justificación Técnica}
-\textit{[Argumentar técnicamente la selección de tecnologías, herramientas, plataformas, equipos o servicios utilizados en el proyecto.]}
+La selección de los marcos de referencia, de la metodología y de las herramientas responde a los criterios siguientes:
 
-Ejemplo de cita metodológica: la justificación de decisiones técnicas puede apoyarse en literatura de diseño e implementación de sistemas como \cite{hevner2004design,humble2011devops}.
-
-\subsection{Ejemplo de Imagen 1}
-Ejemplo de referencia en el cuerpo del texto: la Imagen~\ref{img:ejemplo_1} puede usarse para documentar evidencia técnica del entorno, componentes o interfaz.
-
-\begin{imagen}[htbp]
-  \centering
-  \includegraphics[width=0.80\textwidth]{Capítulos/img/img_ejemplo_1.png}
-  \caption{Ejemplo de imagen para documentación visual de infraestructura o evidencias.}
-  \label{img:ejemplo_1}
-\end{imagen}
-\elaboradopor{Estudiante}
-\fuente{Captura referencial del proyecto}
-
-\subsection{Ejemplo de Ecuación 1}
-Otro ejemplo de referencia: la Ecuación~\ref{eq:disponibilidad} muestra un cálculo típico para validación de disponibilidad del servicio.
-
-\begin{equation}
-\label{eq:disponibilidad}
-Disponibilidad\,(\%) = \frac{T_{operativo}}{T_{total}} \times 100
-\end{equation}
-\addeqtolist{Cálculo de disponibilidad del servicio}
+\begin{itemize}
+  \item \textbf{ISO/IEC 27035} es el estándar internacional específico para la gestión de incidentes; su guía es genérica y adaptable al tamaño de cada organización \cite{iso27035_2023}, y se integra con ISO/IEC 27001 \cite{iso27001_2022}, referente frecuente de los sistemas de gestión de seguridad de la información.
+  \item \textbf{NIST SP 800-61 Rev.~3} es de acceso libre, fue actualizada en 2025 y emplea el lenguaje del CSF 2.0 \cite{nist80061r3,nistcsf2024}, lo que facilita relacionar el protocolo con otros controles de cada IES y con las prácticas de preparación y mejora continua.
+  \item \textbf{La normativa ecuatoriana} (LOFC, LOPDP y norma técnica de la SPDP) define plazos, destinatarios y canales obligatorios que ninguno de los estándares internacionales contempla, por lo que el protocolo los incorpora como requisitos explícitos.
+  \item \textbf{La ciencia del diseño} es adecuada porque el producto es un artefacto organizacional cuya utilidad debe demostrarse y evaluarse \cite{hevner2004design,peffers2007dsrm}.
+  \item \textbf{El juicio de expertos} permite validar el protocolo sin acceder a una institución específica y reunir, en un mismo panel, la experiencia de universidades e institutos superiores y la de especialistas en respuesta a incidentes y protección de datos \cite{aiken1985}.
+  \item \textbf{Los ejercicios de mesa} quedan a cargo de cada IES durante la adopción, porque permiten probar la coordinación, los roles y los tiempos con su propio personal, sin intervenir en los sistemas en producción y a bajo costo \cite{nist80084,angafor2023scenario}.
+  \item \textbf{Las herramientas} son las que cada IES ya posee, como el correo institucional, los formularios en línea, la mesa de ayuda y los repositorios documentales, lo que asegura la factibilidad económica y facilita la adopción del protocolo.
+\end{itemize}

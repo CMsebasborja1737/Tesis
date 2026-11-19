@@ -10,16 +10,16 @@ En materia de datos personales, la LOPDP obliga al responsable del tratamiento a
 
 Para las IES, este escenario implica obligaciones de distinto alcance: todas, públicas y particulares, son responsables del tratamiento de datos personales bajo la LOPDP, mientras que las obligaciones de la LOFC les serán exigibles en la medida en que operen servicios esenciales o infraestructura crítica digital incluidos en el Catálogo Nacional, o presten servicios digitales a terceros. Sin embargo, buena parte de estas instituciones todavía no cuenta con procesos formalizados que les permitan detectar, clasificar, responder y notificar un incidente dentro de los plazos establecidos.
 
-El presente trabajo se desarrolla en la carrera de Ingeniería en Tecnologías de la Información de la Universidad Tecnológica Indoamérica, sede Quito, y toma como entidad receptora a \pendiente{nombre de la institución de educación superior y de la unidad participante}, que gestiona sistemas de información institucionales y ha confirmado su participación en el proyecto mediante \pendiente{carta de aceptación o compromiso, con fecha}.
+El presente trabajo se desarrolla en la carrera de Ingeniería en Tecnologías de la Información de la Universidad Tecnológica Indoamérica, sede Quito. No se circunscribe a una institución en particular: propone una metodología de referencia aplicable a las IES del Ecuador, es decir, a las universidades y escuelas politécnicas y a los institutos superiores técnicos, tecnológicos, pedagógicos y de artes que integran el Sistema de Educación Superior \cite{loes2010}, tanto públicos como particulares.
 
 \section{Estado del Arte}
-La revisión de antecedentes se organizó en tres ejes: (a) la gestión de incidentes en instituciones educativas, (b) los modelos de gestión de incidentes basados en estándares internacionales y (c) los ejercicios de mesa (\textit{tabletop exercises}) como mecanismo de validación.
+La revisión de antecedentes se organizó en tres ejes: (a) la gestión de incidentes en instituciones educativas, (b) los modelos de gestión de incidentes basados en estándares internacionales y (c) los ejercicios de mesa (\textit{tabletop exercises}) como mecanismo para probar los planes de respuesta.
 
 En el primer eje, Villegas-Ch \textit{et al.} \cite{villegas2021csirt} proponen una guía para implementar un equipo de respuesta a incidentes de seguridad informática (CSIRT) en un campus universitario, apoyada en estándares internacionales. Su aporte principal es la estructura organizativa y los servicios del equipo de respuesta; no obstante, se concentra en la conformación del CSIRT y no aborda las obligaciones legales de notificación propias del contexto ecuatoriano vigente desde 2026. Aliyu \textit{et al.} \cite{aliyu2020holistic} desarrollan un marco holístico para evaluar la madurez en ciberseguridad de IES del Reino Unido; aunque su objetivo es la evaluación y no la respuesta, ofrece criterios útiles para estructurar el diagnóstico de la situación actual de una institución. Por su parte, Ojala, Sipola y Saharinen \cite{ojala2025cybersecurity}, mediante entrevistas a 27 funcionarios de tres instituciones de educación técnica en Finlandia, encontraron que, aun cuando existen procedimientos formales, el personal tiende a reportar los incidentes por canales informales, como llamadas o contactos personales, que dejan poca trazabilidad, y que la atención fuera del horario laboral resulta especialmente confusa. Sus recomendaciones (instrucciones diferenciadas por rol, articulación de los canales informales con los formales y contactos de guardia) son directamente aplicables al diseño del protocolo propuesto.
 
 En el segundo eje, Salinas Pérez \cite{salinas2023modelo} diseña un modelo de gestión de incidentes para una entidad estatal peruana con base en ISO/IEC 27035:2016, que organiza el proceso en cinco fases (planificación y preparación, detección y reporte, evaluación y decisión, respuesta y lecciones aprendidas) y define la estructura del equipo de respuesta con sus roles. Constituye un referente metodológico cercano, aunque está orientado a un organismo público fuera del sector educativo y no incluye una validación práctica. Complementariamente, Ahmad \textit{et al.} \cite{ahmad2021situation} muestran, a partir de un caso real, que la respuesta a incidentes depende tanto de la tecnología como de las prácticas de gestión que permiten a la organización percibir, comprender y anticipar la evolución de un incidente, lo que respalda la inclusión explícita de roles, escalamiento y comunicación en el protocolo.
 
-En el tercer eje, Angafor, Yevseyeva y Maglaras \cite{angafor2023scenario} documentan el diseño y la ejecución de un ejercicio de mesa virtual basado en escenarios, y concluyen que este tipo de ejercicios, bien planificados, permite revisar la postura de seguridad de la organización y aumentar la conciencia de directivos y personal técnico. Vykopal \textit{et al.} \cite{vykopal2024tabletop}, en una revisión sistemática de la literatura sobre ejercicios de mesa, identifican que la mayoría siguen un formato lineal y no recogen datos de forma sistemática sobre el desempeño de los participantes, lo que sugiere definir de antemano indicadores medibles para la simulación.
+En el tercer eje, Angafor, Yevseyeva y Maglaras \cite{angafor2023scenario} documentan el diseño y la ejecución de un ejercicio de mesa virtual basado en escenarios, y concluyen que este tipo de ejercicios, bien planificados, permite revisar la postura de seguridad de la organización y aumentar la conciencia de directivos y personal técnico. Vykopal \textit{et al.} \cite{vykopal2024tabletop}, en una revisión sistemática de la literatura sobre ejercicios de mesa, identifican que la mayoría siguen un formato lineal y no recogen datos de forma sistemática sobre el desempeño de los participantes, lo que sugiere definir de antemano indicadores medibles para la simulación. Ambos trabajos sustentan la recomendación, incluida en la fase de preparación del protocolo, de que cada IES que lo adopte lo pruebe con su propio personal mediante ejercicios de mesa.
 
 La Tabla~\ref{tab:comparacion_trabajos} sintetiza la comparación de los trabajos revisados y su relación con el presente proyecto.
 
@@ -42,58 +42,57 @@ La Tabla~\ref{tab:comparacion_trabajos} sintetiza la comparación de los trabajo
     \hline
     Ahmad \textit{et al.} \cite{ahmad2021situation} & Prácticas de gestión para la conciencia situacional en la respuesta. & Caso del sector financiero. & Sustenta el componente organizativo del protocolo. \\
     \hline
-    Angafor \textit{et al.} \cite{angafor2023scenario} & Lecciones del diseño y ejecución de un ejercicio de mesa. & Caso empresarial, no educativo. & Guía para el diseño del ejercicio de validación. \\
+    Angafor \textit{et al.} \cite{angafor2023scenario} & Lecciones del diseño y ejecución de un ejercicio de mesa. & Caso empresarial, no educativo. & Sustenta la recomendación de ejercicios de mesa del protocolo. \\
     \hline
-    Vykopal \textit{et al.} \cite{vykopal2024tabletop} & Revisión sistemática de ejercicios de mesa. & Enfoque formativo más que institucional. & Justifica definir indicadores medibles en la simulación. \\
+    Vykopal \textit{et al.} \cite{vykopal2024tabletop} & Revisión sistemática de ejercicios de mesa. & Enfoque formativo más que institucional. & Indicadores medibles para los ejercicios que realicen las IES. \\
     \hline
   \end{tabular}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia a partir de la revisión bibliográfica}
 \end{table}
-\elaboradopor{Teobaldo Sebastián Borja Luque}
-\fuente{Elaboración propia a partir de la revisión bibliográfica}
 
-En síntesis, la literatura ofrece modelos de gestión de incidentes basados en estándares y evidencia sobre el valor de los ejercicios de mesa, pero no se identificaron trabajos que integren en una sola metodología las fases de ISO/IEC 27035, los plazos de notificación de la LOFC y la LOPDP, y una validación práctica en una IES ecuatoriana. Ese vacío es el que aborda el presente proyecto.
+En síntesis, la literatura ofrece modelos de gestión de incidentes basados en estándares y evidencia sobre el valor de los ejercicios de mesa, pero no se identificaron trabajos que integren en una sola metodología las fases de ISO/IEC 27035, los plazos de notificación de la LOFC y la LOPDP, y una propuesta adaptable a IES ecuatorianas de distinto tipo y tamaño, validada por especialistas. Ese vacío es el que aborda el presente proyecto.
 
 \section{Planteamiento del Problema}
 Las instituciones de educación superior carecen con frecuencia de protocolos formales para detectar, gestionar y notificar incidentes de ciberseguridad. El Índice de Madurez en Ciberseguridad de las IES, elaborado por MetaRed con el apoyo de Banco Santander y la Secretaría General Iberoamericana sobre más de 240 universidades de 14 países, reporta que el 60~\% de ellas sufrió algún ciberataque o ciberincidente en los últimos doce meses, con una media de 15,9 incidentes por institución; que el 53~\% no cuenta con una estrategia institucional de ciberseguridad, y que casi el 70~\% no dispone de procedimientos formales aprobados para gestionar incidentes de \textit{ransomware} \cite{metared2025imc}. En ese estudio, Ecuador figura entre los países con mayores carencias, con un índice de 0,99 sobre 3, frente a una media de 1,37 \cite{metared2025imc}. A ello se suma que, como señala Derenzin-Martinez \cite{derenzin2024}, la falta de datos específicos sobre el impacto de los ciberataques en las universidades ecuatorianas limita la comprensión de la magnitud del problema.
 
 En la práctica, la atención de un acceso no autorizado, una fuga de datos o un ataque informático suele depender del criterio del personal técnico disponible en ese momento, sin fases definidas, sin criterios de clasificación de la severidad y sin responsables claramente asignados. Entre las causas de esta situación se identifican: la ausencia de un procedimiento documentado que oriente las acciones desde la preparación hasta el cierre del incidente; la falta de definición de roles y de una cadena de escalamiento que involucre no solo a TI, sino también a las autoridades, al área jurídica, al delegado de protección de datos y a comunicación institucional; el uso de canales de reporte informales que no dejan registro; y el desconocimiento de las obligaciones introducidas por la LOFC y la reforma a la LOPDP, debido a lo reciente de su expedición.
 
-Como efectos, la respuesta ante las amenazas se retrasa, el impacto sobre los servicios académicos y los datos personales de la comunidad universitaria aumenta, se pierde la evidencia necesaria para analizar lo ocurrido y no se generan lecciones aprendidas que eviten la repetición de los incidentes. Además, la institución queda expuesta a incumplir el plazo de 72 horas previsto en la LOFC, cuando le sea aplicable, y el término de cinco días para notificar a la SPDP, cuya omisión constituye una infracción grave conforme a la LOPDP \cite{lofc2026,spdp2026norma}.
+Como efectos, la respuesta ante las amenazas se retrasa, el impacto sobre los servicios académicos y los datos personales de la comunidad universitaria aumenta, se pierde la evidencia necesaria para analizar lo ocurrido y no se generan lecciones aprendidas que eviten la repetición de los incidentes. Además, las instituciones quedan expuestas a incumplir el plazo de 72 horas previsto en la LOFC, cuando le sea aplicable, y el término de cinco días para notificar a la SPDP, cuya omisión constituye una infracción grave conforme a la LOPDP \cite{lofc2026,spdp2026norma}.
 
 \section{Justificación}
 La gestión de incidentes ha dejado de ser solo una buena práctica técnica para convertirse en una obligación legal en el Ecuador. Disponer de una metodología replicable para diseñar un protocolo de gestión y notificación de incidentes permite a las IES responder de forma oportuna ante las amenazas cibernéticas, reducir el impacto de posibles vulneraciones de datos personales y avanzar hacia el cumplimiento de la LOFC y la LOPDP.
 
-Desde el punto de vista técnico y operativo, el proyecto aporta un proceso estructurado que articula las fases de ISO/IEC 27035 \cite{iso27035_2023} y las recomendaciones de NIST SP 800-61 Rev.~3 \cite{nist80061r3} con los plazos y canales que exige la normativa nacional, de modo que cada incidente siga un mismo flujo, con responsables, tiempos y registros definidos, desde la preparación previa hasta las lecciones aprendidas. La validación mediante juicio de expertos y ejercicios de mesa permite comprobar el protocolo con el personal real de la institución sin afectar los sistemas en producción.
+Desde el punto de vista técnico y operativo, el proyecto aporta un proceso estructurado que articula las fases de ISO/IEC 27035 \cite{iso27035_2023} y las recomendaciones de NIST SP 800-61 Rev.~3 \cite{nist80061r3} con los plazos y canales que exige la normativa nacional, de modo que cada incidente siga un mismo flujo, con responsables, tiempos y registros definidos, desde la preparación previa hasta las lecciones aprendidas. Al tratarse de un protocolo de referencia, cada IES puede adoptarlo y ajustarlo a su estructura, en lugar de diseñar el suyo desde cero.
 
-Los beneficiarios directos son la unidad de TI o de seguridad de la información de la institución seleccionada, que contará con un protocolo documentado y probado, y sus autoridades, que dispondrán de un instrumento para demostrar diligencia ante los entes de control. Los beneficiarios indirectos son los estudiantes, docentes y personal administrativo, cuyos datos personales quedan mejor protegidos, así como otras IES del país, que podrán replicar la metodología.
+Los beneficiarios directos son las unidades de TI o de seguridad de la información de las IES ecuatorianas y sus delegados de protección de datos, que dispondrán de un protocolo documentado y validado por especialistas, así como sus autoridades, que contarán con un instrumento para demostrar diligencia ante los entes de control. Los beneficiarios indirectos son los estudiantes, docentes y personal administrativo, cuyos datos personales quedan mejor protegidos.
 
-El proyecto es factible porque no requiere la adquisición de infraestructura: se apoya en herramientas de gestión documental y flujos de trabajo de bajo costo, en marcos de referencia de acceso público o institucional y en la colaboración del personal clave de la institución, con un tiempo de ejecución de seis meses con dedicación completa del estudiante.
+El proyecto es factible porque no requiere la adquisición de infraestructura ni la autorización de una institución específica: se apoya en normativa, informes y documentos de acceso público, en marcos de referencia internacionales y en la colaboración voluntaria de especialistas, con un tiempo de ejecución de quince semanas, entre el 19 de octubre de 2026 y el 29 de enero de 2027.
 
 \section{Objetivos}
 \subsection{Objetivo General}
-Desarrollar una metodología para diseñar e implementar un protocolo de gestión y notificación de incidentes de ciberseguridad en una institución de educación superior de Quito, que integre ISO/IEC 27035, NIST SP 800-61 Rev.~3 y los requisitos de la LOFC y la LOPDP, y validarla mediante ejercicios de simulación durante el período académico B26.
+Desarrollar una metodología para la implementación de un protocolo de gestión y notificación de incidentes de ciberseguridad en las instituciones de educación superior del Ecuador, que integre ISO/IEC 27035, NIST SP 800-61 Rev.~3 y los requisitos de la LOFC y la LOPDP, y validarla mediante juicio de expertos durante el período académico B26.
 
 \subsection{Objetivos Específicos}
 \begin{enumerate}
-  \item Diagnosticar los mecanismos formales e informales de detección y respuesta ante incidentes de la institución, mediante entrevistas semiestructuradas al personal de TI y una lista de verificación basada en ISO/IEC 27035-1:2023, en el primer mes del proyecto, para establecer una línea base de brechas.
-  \item Diseñar las siete fases de la metodología (preparación, detección, clasificación, respuesta, notificación, cierre y lecciones aprendidas), con sus actividades, criterios de severidad, registros y tiempos máximos, integrando ISO/IEC 27035, NIST SP 800-61 Rev.~3 y los plazos de la LOFC y la LOPDP, hasta el tercer mes del proyecto.
-  \item Elaborar la matriz RACI de roles, responsabilidades y canales de escalamiento para la gestión de incidentes, en conjunto con la unidad de TI de la institución, hasta el cuarto mes del proyecto.
-  \item Validar el protocolo mediante juicio de expertos y dos ejercicios de mesa con el personal clave de la institución, sobre escenarios controlados de \textit{ransomware} y de vulneración de datos personales, evaluados con metas definidas por indicador, en el quinto mes del proyecto.
-  \item Proponer lineamientos para la formalización del protocolo en la normativa interna de la institución, a partir de los resultados de la validación y la retroalimentación de la unidad de TI, al cierre del sexto mes del proyecto.
+  \item Analizar los requisitos normativos y el estado de la gestión de incidentes en las IES ecuatorianas, mediante el análisis documental de la LOFC, la LOPDP y la norma técnica de la SPDP, de estudios previos y de la información pública de una muestra de diez IES, hasta la sexta semana del proyecto, para establecer una línea base de brechas.
+  \item Diseñar las siete fases de la metodología (preparación, detección, clasificación, respuesta, notificación, cierre y lecciones aprendidas), con sus actividades, criterios de severidad, registros y tiempos máximos, integrando ISO/IEC 27035, NIST SP 800-61 Rev.~3 y los plazos de la LOFC y la LOPDP, hasta la octava semana del proyecto.
+  \item Elaborar la matriz RACI de referencia, adaptable a IES de distinto tipo y tamaño, y las plantillas de registro y notificación del protocolo, hasta la octava semana del proyecto.
+  \item Validar la metodología y el protocolo mediante el juicio de al menos cinco expertos, apoyado en un caso ilustrativo de vulneración de datos personales en una IES ficticia y evaluado con el coeficiente V de Aiken, hasta la duodécima semana del proyecto.
 \end{enumerate}
 
 \section{Alcance del Proyecto}
 El proyecto comprende:
 \begin{itemize}
-  \item El diagnóstico de los procesos actuales de gestión de incidentes en la institución o unidad seleccionada.
-  \item El diseño de la metodología y del protocolo: fase de preparación, criterios de clasificación de incidentes y de vulneraciones de datos personales, roles, matriz RACI, canales de notificación internos y externos, y plantillas de registro, de notificación a la SPDP a través del SISPDP, de notificación al CSIRT y de comunicación a los titulares.
-  \item La validación del protocolo mediante juicio de expertos y dos ejercicios simulados (\textit{tabletop exercises}) de incidentes de ciberseguridad, con indicadores y metas definidos previamente.
-  \item La elaboración de recomendaciones para su formalización institucional.
+  \item El diagnóstico documental de la gestión de incidentes en las IES ecuatorianas, a partir de la normativa vigente, de estudios previos y de la información que publica una muestra intencional de diez universidades e institutos superiores.
+  \item El diseño del protocolo de referencia: siete fases, criterios de clasificación de incidentes y de vulneraciones de datos personales, niveles de severidad, matriz RACI y cuatro plantillas: reporte y bitácora del incidente, ficha de clasificación, notificación externa (al órgano de control o ente rector, al CSIRT y a la SPDP mediante el SISPDP) y comunicación a los titulares.
+  \item La validación del protocolo mediante juicio de expertos, con indicadores y metas definidos previamente.
 \end{itemize}
 
-Como entregables se obtendrán el documento metodológico, el protocolo de gestión de incidentes en formato de plantilla institucional, el informe de validación por juicio de expertos y el informe de resultados de los ejercicios de simulación.
+Como entregables se obtendrán el protocolo de referencia con sus plantillas y el informe de validación por juicio de expertos, ambos incluidos en este documento; las recomendaciones para su adopción por parte de las IES se presentan en las conclusiones.
 
-La validación se realizará en dos momentos. Primero, al menos tres especialistas en ciberseguridad, gestión de TI o protección de datos personales evaluarán la pertinencia, claridad, suficiencia y coherencia normativa del protocolo mediante un instrumento con escala ordinal, cuya validez de contenido se estimará con el coeficiente V de Aiken \cite{aiken1985}. Después, el personal clave de la institución participará en dos ejercicios de mesa: el primero, sobre un ataque de \textit{ransomware} que interrumpe un servicio académico crítico, pone a prueba la detección, el escalamiento y la respuesta; el segundo, sobre la exposición de datos personales de estudiantes a partir de credenciales comprometidas por \textit{phishing}, pone a prueba la clasificación de la vulneración, la notificación a la SPDP y la comunicación a los titulares. La Tabla~\ref{tab:indicadores_validacion} presenta los indicadores y metas con que se evaluará el protocolo.
+La validación se realizará mediante el juicio de al menos cinco especialistas en ciberseguridad, gestión de TI en universidades o institutos superiores y protección de datos personales, que evaluarán la pertinencia, claridad, suficiencia y coherencia normativa del protocolo mediante un instrumento con escala ordinal, cuya validez de contenido se estimará con el coeficiente V de Aiken \cite{aiken1985}. Para valorar su aplicabilidad, el instrumento incluye un caso ilustrativo: la exposición de datos personales de estudiantes de una IES ficticia a partir de credenciales comprometidas por \textit{phishing}, recorrido fase por fase con los plazos de notificación correspondientes. La evaluación se realiza en una sola ronda; solo los ítems que no alcancen la meta se ajustarán y se enviarán de nuevo a los expertos en una consulta breve. La Tabla~\ref{tab:indicadores_validacion} presenta los indicadores y metas con que se evaluará el protocolo.
 
 \begin{table}[htbp]
   \centering
@@ -104,25 +103,27 @@ La validación se realizará en dos momentos. Primero, al menos tres especialist
     \hline
     \textbf{Indicador} & \textbf{Definición} & \textbf{Meta} \\
     \hline
-    Validez de contenido & Coeficiente V de Aiken de cada ítem evaluado por los expertos. & $\geq$ 0,80 por ítem \\
+    Validez de contenido por ítem & Coeficiente V de Aiken de cada ítem evaluado por los expertos. & $\geq$ 0,80 por ítem \\
     \hline
-    Tiempo de escalamiento & Tiempo desde la detección simulada hasta que el coordinador del equipo de respuesta es informado. & $\leq$ 60 minutos \\
+    Validez por criterio & Promedio del coeficiente V de Aiken en cada criterio: pertinencia, claridad, suficiencia y coherencia normativa. & $\geq$ 0,80 por criterio \\
     \hline
-    Tiempo de clasificación & Tiempo hasta decidir si el evento es un incidente relevante (LOFC), una vulneración de datos personales (LOPDP) o ambos. & $\leq$ 4 horas simuladas \\
+    Aplicabilidad & Coeficiente V de Aiken de los ítems sobre el caso ilustrativo, incluido el cumplimiento de los plazos de notificación. & $\geq$ 0,80 \\
     \hline
-    Cumplimiento de actividades & Porcentaje de actividades del protocolo ejecutadas correctamente según la lista de verificación del ejercicio. & $\geq$ 90~\% \\
+    Ítems aceptados & Porcentaje de ítems con V $\geq$ 0,80 al cierre de la validación. & 100~\% \\
     \hline
-    Preparación de la notificación & Porcentaje de campos obligatorios completados en los borradores de notificación al CSIRT, a la SPDP y a los titulares dentro de los plazos simulados. & 100~\% \\
-    \hline
-    Claridad de roles & Porcentaje de participantes que identifican correctamente su rol según la matriz RACI. & $\geq$ 90~\% \\
+    Cobertura de requisitos & Porcentaje de requisitos funcionales que el protocolo atiende con al menos una fase, actividad o plantilla. & 100~\% \\
     \hline
   \end{tabular}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia}
 \end{table}
-\elaboradopor{Teobaldo Sebastián Borja Luque}
-\fuente{Elaboración propia}
 
 Quedan fuera del alcance:
 \begin{itemize}
+  \item La implementación del protocolo en una institución específica y los ejercicios de mesa con su personal, que corresponden a cada IES durante la adopción.
+  \item La recolección de datos internos de las IES, como entrevistas, encuestas o registros de incidentes.
+  \item La guía detallada de ejercicios de mesa, el modelo de política institucional y las versiones del protocolo específicas para cada tipo de institución, que se plantean como trabajo futuro.
   \item La notificación real de incidentes ante el CSIRT Nacional, la SPDP u otras autoridades competentes.
   \item La implementación de herramientas de monitoreo o detección en el entorno de producción.
   \item La gestión legal de sanciones y la representación institucional ante entes reguladores.
@@ -140,7 +141,7 @@ La serie ISO/IEC 27035 proporciona un enfoque estructurado para la gestión de i
 La revisión 3 de la guía NIST SP 800-61, publicada en 2025, integra la respuesta a incidentes dentro de la gestión de riesgos de ciberseguridad y la alinea con las seis funciones del \textit{Cybersecurity Framework} (CSF) 2.0: gobernar, identificar, proteger, detectar, responder y recuperar \cite{nist80061r3,nistcsf2024}. Las tres primeras funciones agrupan las actividades de preparación; detectar, responder y recuperar corresponden a la respuesta propiamente dicha, y la mejora continua se ubica en la categoría de mejora de la función identificar. Este enfoque refuerza que la preparación (políticas, roles y ejercicios) y la mejora continua forman parte del ciclo de respuesta, y no solo las acciones posteriores a la detección.
 
 \subsection{Equivalencia de fases entre la metodología y los marcos de referencia}
-La metodología propuesta organiza la gestión de incidentes en siete fases. La fase de preparación precede a cualquier incidente y comprende la política, los roles, la matriz RACI, los canales y plantillas de notificación, la designación del punto de contacto permanente y la capacitación del personal. Las fases de notificación y cierre se separan de la respuesta, a diferencia de ISO/IEC 27035, para controlar de forma explícita los plazos legales ecuatorianos. La Tabla~\ref{tab:equivalencia_fases} muestra la correspondencia de cada fase con ISO/IEC 27035-1:2023, con las funciones y categorías del CSF 2.0 que emplea NIST SP 800-61 Rev.~3 y con los requisitos normativos nacionales.
+La metodología propuesta organiza la gestión de incidentes en siete fases. La fase de preparación precede a cualquier incidente y comprende la política, los roles, la matriz RACI, los canales y plantillas de notificación, la designación del punto de contacto permanente, la capacitación del personal y los ejercicios de mesa. Las fases de notificación y cierre se separan de la respuesta, a diferencia de ISO/IEC 27035, para controlar de forma explícita los plazos legales ecuatorianos. La Tabla~\ref{tab:equivalencia_fases} muestra la correspondencia de cada fase con ISO/IEC 27035-1:2023, con las funciones y categorías del CSF 2.0 que emplea NIST SP 800-61 Rev.~3 y con los requisitos normativos nacionales.
 
 \begin{table}[htbp]
   \centering
@@ -166,9 +167,10 @@ La metodología propuesta organiza la gestión de incidentes en siete fases. La 
     7. Lecciones aprendidas & Aprender lecciones & Identificar: mejora (ID.IM) & Actualización del protocolo y de las medidas de seguridad. \\
     \hline
   \end{tabular}
+  \par\normalsize\raggedright
+  \elaboradopor{Teobaldo Sebastián Borja Luque}
+  \fuente{Elaboración propia a partir de \cite{iso27035_2023,nist80061r3,nistcsf2024,lofc2026,lopdp2021,spdp2026norma}}
 \end{table}
-\elaboradopor{Teobaldo Sebastián Borja Luque}
-\fuente{Elaboración propia a partir de \cite{iso27035_2023,nist80061r3,nistcsf2024,lofc2026,lopdp2021,spdp2026norma}}
 
 \subsection{Marco normativo ecuatoriano}
 La LOFC define el régimen de gestión y notificación de incidentes bajo la rectoría del MINTEL, en coordinación con el CSIRT Nacional; en los sectores con órganos de control especializados, la notificación se canaliza a través de dichos órganos, que consolidan y remiten la información al ente rector \cite{lofc2026}. La LOPDP, reformada por la LOFC, regula la notificación de vulneraciones de datos personales a la SPDP, a la ARCOTEL y al CSIRT correspondiente, así como la comunicación a los titulares \cite{lopdp2021,lofc2026}.
@@ -178,5 +180,8 @@ La norma técnica de la SPDP desarrolla tres aspectos que el protocolo debe inco
 \subsection{Roles y matriz RACI}
 La matriz RACI asigna a cada actividad del proceso los actores que la ejecutan (\textit{Responsible}), quien responde por su resultado (\textit{Accountable}), quienes deben ser consultados (\textit{Consulted}) y quienes deben ser informados (\textit{Informed}). En la gestión de incidentes, esta herramienta evita la ambigüedad sobre quién decide escalar, contener o notificar, problema documentado en instituciones educativas \cite{ojala2025cybersecurity}.
 
-\subsection{Ejercicios de mesa y juicio de expertos}
-Un ejercicio de mesa es una actividad basada en la discusión, en la que el personal con responsabilidades en un plan recorre un escenario simulado para validar su contenido, sus roles y su capacidad de coordinación, sin intervenir en los sistemas reales \cite{nist80084}. Su eficacia aumenta cuando el escenario es realista y cuando se definen previamente los datos que se recogerán sobre el desempeño de los participantes \cite{angafor2023scenario,vykopal2024tabletop}. El juicio de expertos complementa esta validación práctica: un grupo de especialistas califica cada elemento del protocolo, y el coeficiente V de Aiken cuantifica el grado de acuerdo sobre su validez, con valores entre 0 y 1 \cite{aiken1985}.
+\subsection{Juicio de expertos}
+El juicio de expertos es una técnica de validación en la que un grupo de especialistas califica cada elemento de un instrumento o propuesta según criterios definidos. El coeficiente V de Aiken cuantifica el grado de acuerdo de los jueces sobre la validez de cada elemento, con valores entre 0 y 1 \cite{aiken1985}. En este proyecto, la técnica permite evaluar el protocolo sin depender del acceso a una institución, y el caso ilustrativo incorporado al instrumento acerca la evaluación a las condiciones reales de aplicación.
+
+\subsection{Ejercicios de mesa}
+Un ejercicio de mesa es una actividad basada en la discusión, en la que el personal con responsabilidades en un plan recorre un escenario simulado para validar su contenido, sus roles y su capacidad de coordinación, sin intervenir en los sistemas reales \cite{nist80084}. Su eficacia aumenta cuando el escenario es realista y cuando se definen previamente los datos que se recogerán sobre el desempeño de los participantes \cite{angafor2023scenario,vykopal2024tabletop}. Por ello, el protocolo recomienda, en su fase de preparación, que cada IES que lo adopte ejecute estos ejercicios con su propio personal.

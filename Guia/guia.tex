@@ -1,0 +1,330 @@
+% ============================================================
+% Guía de prevención y respuesta ante incidentes de ciberseguridad
+% para instituciones de educación superior del Ecuador.
+% Entregable aparte de la tesis. Compilar con:  latexmk -xelatex guia.tex
+% Usa la bibliografía de la tesis (../Escrtio/referencias.bib) y guia.bib.
+% ============================================================
+\documentclass[11pt,a4paper,oneside]{report}
+
+\usepackage{fontspec}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+\setlength{\emergencystretch}{3em}
+\hyphenation{ciberseguridad}
+\titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter.}{0.6em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{1.2em}
+
+% Columnas alineadas a la izquierda y sin guiones de corte
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hyphenpenalty=10000}p{#1}}
+\newcolumntype{C}[1]{L{\dimexpr#1\linewidth-2\tabcolsep-1pt\relax}}
+% Marca en rojo lo que falta completar o verificar
+\newcommand{\pendiente}[1]{\textcolor{red}{\textit{[#1]}}}
+% Casilla de verificación
+\newcommand{\casilla}{$\square$}
+
+\renewcommand{\bibname}{Referencias}
+
+\begin{document}
+
+% ------------------------------------------------------------ Portada
+\begin{titlepage}
+  \centering
+  {\large Universidad Tecnológica Indoamérica\par}
+  {\large Carrera de Ingeniería en Tecnologías de la Información\par}
+  \vspace{4cm}
+  {\Huge\bfseries Guía de prevención y respuesta ante incidentes de ciberseguridad\par}
+  \vspace{0.8cm}
+  {\Large para instituciones de educación superior del Ecuador\par}
+  \vspace{0.6cm}
+  {\large Dirigida al personal de tecnologías de la información\par}
+  \vspace{0.6cm}
+  {\large\color{red}\textbf{Versión preliminar (beta)}\par}
+  \vfill
+  {\large Teobaldo Sebastián Borja Luque\par}
+  {\large Tutora: Maria Cristina Jiménez Hernandez\par}
+  \vspace{0.6cm}
+  {\large Quito, \pendiente{mes} de 2027\par}
+\end{titlepage}
+
+\tableofcontents
+
+% ============================================================
+\chapter{Cómo usar esta guía}
+% ============================================================
+Esta guía está dirigida al personal de tecnologías de la información (TI) y de seguridad de la información de las universidades, escuelas politécnicas e institutos superiores del Ecuador. Responde a dos preguntas prácticas: qué hacer para prevenir un ataque informático y qué hacer si la institución es atacada, incluidas las notificaciones que exige la ley.
+
+La guía se organiza en cinco partes:
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Marco legal} (capítulo~\ref{cap:legal}): qué normas aplican a cada tipo de institución y qué obligaciones imponen.
+  \item \textbf{Normativa interna} (capítulo~\ref{cap:interna}): qué documentos debería tener cada institución y qué se encontró en una muestra de diez IES.
+  \item \textbf{Prevención} (capítulo~\ref{cap:prevencion}): controles priorizados para equipos de TI de cualquier tamaño.
+  \item \textbf{Respuesta} (capítulo~\ref{cap:respuesta}): qué hacer cuando ocurre un incidente, con pasos para los casos más frecuentes.
+  \item \textbf{Notificación} (capítulo~\ref{cap:notificacion}): a quién, cuándo y por qué canal se notifica.
+\end{enumerate}
+
+La respuesta sigue el protocolo de siete fases desarrollado en el trabajo de titulación del autor, que integra ISO/IEC 27035 \cite{iso27035_2023} y NIST SP 800-61 Rev.~3 \cite{nist80061r3} con la normativa ecuatoriana. Esta guía es su versión operativa: el protocolo explica el porqué; la guía, el qué hacer.
+
+\textbf{Advertencia.} Esta guía no reemplaza el asesoramiento jurídico. Antes de una notificación real, la institución debe confirmar los plazos y destinatarios con su asesoría jurídica y con el texto oficial vigente de cada norma.
+
+% ============================================================
+\chapter{Marco legal ecuatoriano}
+\label{cap:legal}
+% ============================================================
+\section{Normas aplicables}
+La Tabla~\ref{tab:normas} resume las normas que una IES debe conocer para gestionar incidentes de ciberseguridad.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Normas ecuatorianas relacionadas con la ciberseguridad en las IES.}
+  \label{tab:normas}
+  \small
+  \begin{tabular}{|C{0.30}|C{0.42}|C{0.28}|}
+    \hline
+    \textbf{Norma} & \textbf{Qué regula en relación con los incidentes} & \textbf{A quién aplica} \\
+    \hline
+    Constitución de la República, art.~66, num.~19 \cite{constitucion2008} & Reconoce el derecho a la protección de los datos de carácter personal. & Todas las IES \\
+    \hline
+    Ley Orgánica de Protección de Datos Personales (LOPDP) \cite{lopdp2021} y su Reglamento General \cite{reglamentolopdp2023} & Medidas de seguridad del tratamiento y notificación de vulneraciones a la SPDP, la ARCOTEL, el CSIRT y los titulares (arts.~43, 44 y 46). & Todas las IES, públicas y particulares, como responsables del tratamiento \\
+    \hline
+    Norma Técnica de Notificaciones de Vulneraciones, Resolución SPDP-SPD-2026-0040-R \cite{spdp2026norma} & Canal digital (SISPDP), clasificación de vulneraciones y contenido de la comunicación a titulares. & Todas las IES \\
+    \hline
+    Ley Orgánica para el Fortalecimiento de la Ciberseguridad (LOFC) \cite{lofc2026} & Notificación de incidentes relevantes en 72 horas, punto de contacto permanente, sanciones. & IES públicas en lo relacionado con servicios esenciales; IES que operen infraestructura crítica digital o presten servicios digitales a terceros \\
+    \hline
+    Esquema Gubernamental de Seguridad de la Información, EGSI v3.0 \cite{egsi2024} & Controles mínimos de seguridad de la información y gestión de incidentes para el sector público. & Entidades del sector público; en la práctica, universidades e institutos públicos \pendiente{confirmar el ámbito en el texto oficial} \\
+    \hline
+    Código Orgánico Integral Penal (COIP), arts.~229 a 234.1 \cite{coip2014} & Tipifica los delitos informáticos que pueden denunciarse ante la Fiscalía (Sección~\ref{sec:delitos}). & Personas que cometen el delito; la IES es la víctima \\
+    \hline
+    Código Orgánico Administrativo (COA) \cite{coa2017} & Los plazos expresados como \textit{término} se cuentan en días hábiles. & Cómputo de plazos de la LOPDP \\
+    \hline
+    Ley Orgánica para la Transformación Digital y Audiovisual \cite{lotda2023} & Marco de la transformación digital del Estado; base legal del EGSI y reformada por la LOFC. & Sector público \\
+    \hline
+    Ley Orgánica de Educación Superior (LOES) \cite{loes2010} & Define los tipos de IES: universidades, escuelas politécnicas e institutos superiores, públicos y particulares. & Todas las IES \\
+    \hline
+  \end{tabular}
+  \par\raggedright
+  {\footnotesize Fuente: elaboración propia a partir de las normas citadas. Verifique los artículos en el Registro Oficial antes de aplicarlos.\par}
+\end{table}
+
+\section{¿Qué aplica a mi institución?}
+Las obligaciones dependen de dos preguntas: si la IES es pública o particular, y si opera servicios esenciales o infraestructura crítica digital incluidos en el Catálogo Nacional que mantiene el MINTEL \cite{lofc2026}.
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Toda IES}, pública o particular, trata datos personales de estudiantes, docentes y personal. Por tanto, siempre le aplican la LOPDP, su Reglamento y la norma técnica de la SPDP.
+  \item \textbf{Una IES pública} debe implementar además el EGSI v3.0 \cite{egsi2024} y, en lo relacionado con servicios esenciales o infraestructura crítica digital, cumplir la LOFC.
+  \item \textbf{Una IES particular} queda sujeta a la LOFC solo si opera infraestructura crítica digital, presta servicios esenciales incluidos en el Catálogo Nacional o presta servicios digitales a terceros. Aun así, se recomienda adoptar sus buenas prácticas.
+\end{itemize}
+
+\section{Obligaciones de notificación}
+Cuando ocurre un incidente, la institución puede tener que notificar a varios destinatarios con plazos distintos. La Tabla~\ref{tab:plazos} los resume; el capítulo~\ref{cap:notificacion} explica cómo cumplirlos.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Plazos de notificación.}
+  \label{tab:plazos}
+  \small
+  \begin{tabular}{|C{0.34}|C{0.36}|C{0.30}|}
+    \hline
+    \textbf{Qué ocurre} & \textbf{A quién se notifica} & \textbf{Plazo} \\
+    \hline
+    Incidente relevante (LOFC) & Órgano de control del sector o ente rector (MINTEL), que coordina con el CSIRT Nacional & Sin dilación y como máximo 72 horas desde la detección \\
+    \hline
+    Vulneración de datos personales (LOPDP, art.~43) & SPDP mediante el SISPDP, ARCOTEL y CSIRT & Término de cinco días desde que se tuvo constancia \\
+    \hline
+    Vulneración detectada por un proveedor que trata datos para la IES (LOPDP, art.~44) & La IES, como responsable del tratamiento & Término de dos días \\
+    \hline
+    Vulneración con riesgo para los titulares (LOPDP, art.~46) & Estudiantes, docentes o personal afectados & Término de tres días \\
+    \hline
+  \end{tabular}
+  \par\raggedright
+  {\footnotesize Fuente: \cite{lofc2026,lopdp2021,spdp2026norma,coa2017}. \pendiente{confirmar los artículos de la LOFC en el Registro Oficial N.° 290}\par}
+\end{table}
+
+\section{Delitos informáticos}
+\label{sec:delitos}
+Un incidente puede constituir también un delito. El COIP tipifica, entre otros, la revelación ilegal de bases de datos (art.~229), la interceptación ilegal de datos, que incluye diseñar o distribuir software malicioso (art.~230), el ataque a la integridad de sistemas informáticos (art.~232) y el acceso no consentido a un sistema informático, telemático o de telecomunicaciones (art.~234), además de la falsificación informática (art.~234.1), agregada en la reforma de 2021 \cite{coip2014}. Las penas se agravan cuando el ataque afecta bienes informáticos destinados a un servicio público.
+
+La notificación a las autoridades de ciberseguridad o de protección de datos no reemplaza la denuncia ante la Fiscalía cuando los hechos pueden constituir un delito \cite{lofc2026}. Por ello, la asesoría jurídica de la IES debe evaluar en cada incidente grave si corresponde denunciar, y el equipo de TI debe preservar las evidencias desde el primer momento.
+
+% ============================================================
+\chapter{Normativa interna de las instituciones}
+\label{cap:interna}
+% ============================================================
+\section{Documentos que toda IES debería tener}
+La normativa nacional se aplica a través de documentos internos. Como mínimo, cada institución debería contar con:
+
+\begin{itemize}[leftmargin=*]
+  \item[\casilla] Política de seguridad de la información aprobada por la máxima autoridad; en las IES públicas, alineada con el EGSI v3.0 \cite{egsi2024}.
+  \item[\casilla] Política o aviso de privacidad publicado, conforme a la LOPDP \cite{lopdp2021}.
+  \item[\casilla] Delegado de protección de datos designado y un canal de contacto para el ejercicio de derechos.
+  \item[\casilla] Procedimiento de gestión y notificación de incidentes, con roles y plazos (este es el objeto del protocolo del trabajo de titulación).
+  \item[\casilla] Punto de contacto técnico permanente para la coordinación con el ente rector y el CSIRT \cite{lofc2026}.
+  \item[\casilla] Cláusulas en los contratos con proveedores que traten datos personales, que les obliguen a notificar vulneraciones a la IES en el término de dos días \cite{lopdp2021}.
+\end{itemize}
+
+\section{Situación en una muestra de IES}
+\pendiente{Completar con los resultados de la revisión de la información pública de las diez IES de la muestra (cinco universidades y cinco institutos superiores): qué documentos publica cada tipo de institución, si las públicas declaran haber adoptado el EGSI v3.0 y qué vacíos son más frecuentes. Presentar los resultados con códigos (U01 a U05, I01 a I05), sin nombrar a las instituciones.}
+
+% ============================================================
+\chapter{Prevención}
+\label{cap:prevencion}
+% ============================================================
+Las IES combinan redes abiertas, miles de usuarios que cambian cada semestre, dispositivos personales y sistemas heredados. Por eso los ataques más frecuentes no son sofisticados: el \textit{phishing} que roba credenciales, el \textit{ransomware} que cifra servidores sin respaldos aislados y el acceso con cuentas de personas que ya salieron de la institución. El informe de MetaRed reporta que el 60~\% de las universidades iberoamericanas sufrió algún incidente en un año y que casi el 70~\% no tiene procedimientos formales para gestionar \textit{ransomware} \cite{metared2025imc}.
+
+La Tabla~\ref{tab:controles} prioriza los controles en dos niveles. El \textbf{nivel básico} reúne lo que cualquier institución, incluso un instituto con una o dos personas en TI, debería tener; el \textbf{nivel intermedio}, lo que conviene implementar una vez cubierto el básico. La selección se basa en las funciones del CSF 2.0 \cite{nistcsf2024}, los controles de ISO/IEC 27001:2022 \cite{iso27001_2022} y los controles priorizados del CIS \cite{cis2024}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Controles de prevención priorizados para IES.}
+  \label{tab:controles}
+  \small
+  \begin{tabular}{|C{0.23}|C{0.47}|C{0.15}|C{0.15}|}
+    \hline
+    \textbf{Control} & \textbf{Qué hacer en una IES} & \textbf{Nivel} & \textbf{CSF 2.0} \\
+    \hline
+    Inventario de activos & Listar servidores, sistemas académicos y administrativos, servicios en la nube y bases de datos con datos personales, con su responsable. & Básico & ID.AM \\
+    \hline
+    Autenticación multifactor & Activarla primero en el correo institucional, el acceso remoto, las cuentas de administración y los sistemas que manejan calificaciones o pagos. & Básico & PR.AA \\
+    \hline
+    Altas y bajas de cuentas & Desactivar las cuentas al terminar contratos, semestres o titulaciones; revisar cada semestre los accesos privilegiados. & Básico & PR.AA \\
+    \hline
+    Copias de seguridad & Regla 3-2-1: tres copias, dos medios, una fuera de línea o inmutable; probar la restauración al menos una vez por semestre. & Básico & PR.DS \\
+    \hline
+    Actualizaciones & Aplicar parches críticos de sistemas expuestos a internet en días, no en meses; retirar o aislar los sistemas sin soporte. & Básico & PR.PS \\
+    \hline
+    Concienciación & Capacitar a docentes, administrativos y estudiantes en reconocer \textit{phishing} y en cómo reportarlo; hacer simulaciones periódicas. & Básico & PR.AT \\
+    \hline
+    Canal de reporte & Publicar un correo o formulario único para reportar incidentes, disponible también fuera del horario laboral. & Básico & RS.MA \\
+    \hline
+    Segmentación de red & Separar las redes administrativa, académica, de laboratorios y de invitados; los laboratorios no deben llegar a los servidores administrativos. & Intermedio & PR.IR \\
+    \hline
+    Registros y monitoreo & Centralizar los registros de autenticación, correo y servidores, conservarlos un tiempo definido y revisar alertas. & Intermedio & DE.CM \\
+    \hline
+    Protección de datos personales & Minimizar los datos que se recogen, cifrar los equipos portátiles y restringir las exportaciones masivas de bases de estudiantes. & Intermedio & PR.DS \\
+    \hline
+    Proveedores & Exigir en los contratos cláusulas de seguridad y de notificación de vulneraciones. & Intermedio & GV.SC \\
+    \hline
+  \end{tabular}
+  \par\raggedright
+  {\footnotesize Fuente: elaboración propia a partir de \cite{nistcsf2024,iso27001_2022,cis2024}.\par}
+\end{table}
+
+\section{Autoevaluación rápida}
+Marque los controles que la institución ya cumple. Si alguno del nivel básico queda sin marcar, debe priorizarse.
+
+\begin{itemize}[leftmargin=*]
+  \item[\casilla] Existe un inventario actualizado de sistemas y bases de datos con datos personales.
+  \item[\casilla] El correo institucional y las cuentas de administración usan autenticación multifactor.
+  \item[\casilla] Las cuentas de quienes salieron de la institución se desactivan en menos de una semana.
+  \item[\casilla] Hay una copia de seguridad fuera de línea y la restauración se probó en los últimos seis meses.
+  \item[\casilla] Los sistemas expuestos a internet tienen los parches críticos aplicados.
+  \item[\casilla] La comunidad sabe a dónde reportar un correo sospechoso.
+  \item[\casilla] Existe un procedimiento de respuesta a incidentes con roles y plazos de notificación.
+\end{itemize}
+
+% ============================================================
+\chapter{Respuesta ante un incidente}
+\label{cap:respuesta}
+% ============================================================
+\section{Las siete fases}
+Cuando se detecta un incidente, el equipo sigue las siete fases del protocolo. La fase de preparación ocurre antes del incidente; las demás, durante y después.
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Preparación.} Roles definidos, punto de contacto permanente, plantillas listas y personal capacitado. Se recomienda probar el protocolo con ejercicios de mesa \cite{nist80084}.
+  \item \textbf{Detección y reporte.} Registrar la fecha y hora de detección: desde ese momento corren los plazos legales.
+  \item \textbf{Clasificación.} Asignar la severidad y decidir si es un incidente relevante (LOFC), una vulneración de datos personales (LOPDP) o ambos.
+  \item \textbf{Respuesta.} Contener, erradicar y recuperar, preservando las evidencias.
+  \item \textbf{Notificación.} Notificar dentro de los plazos de la Tabla~\ref{tab:plazos}.
+  \item \textbf{Cierre.} Completar la bitácora y conservar la constancia de recepción del SISPDP y las evidencias.
+  \item \textbf{Lecciones aprendidas.} Revisar qué falló y actualizar el protocolo y los controles.
+\end{enumerate}
+
+\section{Primeros pasos por tipo de incidente}
+\subsection{\textit{Ransomware}}
+\begin{itemize}[leftmargin=*]
+  \item Desconectar de la red los equipos afectados, sin apagarlos, para conservar evidencias en memoria.
+  \item Desactivar los accesos remotos y cambiar las credenciales de administración desde un equipo limpio.
+  \item Identificar el alcance: qué servidores y copias de seguridad fueron alcanzados.
+  \item Restaurar desde la copia fuera de línea solo después de eliminar la causa.
+  \item Evaluar si hubo exfiltración de datos personales: en ese caso, también es una vulneración y corren los plazos de la LOPDP.
+\end{itemize}
+
+\subsection{Cuenta comprometida por \textit{phishing}}
+\begin{itemize}[leftmargin=*]
+  \item Restablecer la contraseña, cerrar las sesiones activas y verificar el segundo factor.
+  \item Revisar las reglas de reenvío del correo y los accesos recientes de la cuenta.
+  \item Buscar y retirar el mismo correo malicioso de los demás buzones.
+  \item Determinar a qué datos tuvo acceso la cuenta; si incluyen datos personales de terceros, tratarlo como vulneración.
+\end{itemize}
+
+\subsection{Fuga o exposición de datos personales}
+\begin{itemize}[leftmargin=*]
+  \item Cortar la exposición: retirar el archivo publicado, cerrar el acceso indebido o revocar el enlace compartido.
+  \item Determinar qué datos, de cuántos titulares y durante cuánto tiempo estuvieron expuestos.
+  \item Clasificar la vulneración según la norma de la SPDP: confidencialidad, integridad o disponibilidad, y carácter temporal, permanente o irreversible \cite{spdp2026norma}.
+  \item Avisar de inmediato al delegado de protección de datos: el término de cinco días ya está corriendo.
+\end{itemize}
+
+\section{Lo que no se debe hacer}
+\begin{itemize}[leftmargin=*]
+  \item Borrar registros, reinstalar equipos o formatear discos antes de preservar la evidencia.
+  \item Comunicar públicamente el incidente sin coordinarlo con la autoridad, la asesoría jurídica y comunicación institucional.
+  \item Esperar a tener toda la información para notificar: los plazos corren desde la detección o la constancia.
+  \item Negociar o pagar un rescate sin la decisión de las autoridades y la asesoría jurídica.
+\end{itemize}
+
+% ============================================================
+\chapter{Notificación}
+\label{cap:notificacion}
+% ============================================================
+\section{Cómo notificar}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{A la SPDP:} de forma digital, mediante el Sistema Nacional de Registro de Datos Personales (SISPDP). El sistema emite una constancia de recepción, que debe conservarse como evidencia \cite{spdp2026norma}.
+  \item \textbf{A la ARCOTEL y al CSIRT:} según lo dispuesto en el artículo 43 de la LOPDP, reformado por la LOFC \cite{lopdp2021,lofc2026}. \pendiente{confirmar los canales vigentes de la ARCOTEL y del CSIRT}
+  \item \textbf{Al órgano de control o ente rector:} cuando se trate de un incidente relevante según la LOFC, por los formatos que defina el ente rector \cite{lofc2026}.
+  \item \textbf{A los titulares:} por los canales habituales de la institución (correo institucional, plataforma académica). Solo si no existe un canal oficial se recurre a medios masivos. El mensaje debe describir la vulneración, su fecha de detección, las medidas adoptadas y recomendaciones para protegerse \cite{spdp2026norma}.
+\end{itemize}
+
+\section{Contactos que la institución debe tener a mano}
+Antes de un incidente, complete esta lista y manténgala accesible fuera de los sistemas institucionales, por si estos dejan de funcionar.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Lista de contactos para la respuesta a incidentes.}
+  \label{tab:contactos}
+  \small
+  \begin{tabular}{|C{0.38}|C{0.31}|C{0.31}|}
+    \hline
+    \textbf{Rol o entidad} & \textbf{Nombre o canal} & \textbf{Teléfono o correo} \\
+    \hline
+    Coordinador de incidentes de la IES & & \\
+    \hline
+    Delegado de protección de datos & & \\
+    \hline
+    Autoridad que rinde cuentas & & \\
+    \hline
+    Asesoría jurídica & & \\
+    \hline
+    Comunicación institucional & & \\
+    \hline
+    SPDP (SISPDP) & & \\
+    \hline
+    CSIRT Nacional y órgano de control del sector & & \\
+    \hline
+    Proveedores críticos (nube, correo, sistema académico) & & \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\bibliographystyle{IEEEtran}
+\bibliography{../Escrtio/referencias,guia}
+
+\end{document}

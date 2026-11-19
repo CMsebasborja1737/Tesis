@@ -1,0 +1,13 @@
+# Copias de lectura y respaldos locales (se regeneran desde la tesis)
+PDFs_capitulos/
+
+# Archivos temporales de compilación de la guía (se conserva guia.pdf)
+Guia/*.aux
+Guia/*.bbl
+Guia/*.blg
+Guia/*.fdb_latexmk
+Guia/*.fls
+Guia/*.log
+Guia/*.out
+Guia/*.toc
+Guia/*.xdv
